@@ -4,8 +4,9 @@ const app = express();
 app.use(express.json());
 
 const VERIFY_TOKEN = "instabot_secret_2024";
-const CLAUDE_API_KEY = process.env.CLAUDE_API_KEY;
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const IG_ACCESS_TOKEN = process.env.IG_ACCESS_TOKEN;
+const AI_PROMPT = process.env.AI_PROMPT || "Siz Instagram biznes akkaunt assistentidasiz. Savollarga qisqa, do'stona va professional javob bering.";
 
 // Webhook verification
 app.get("/webhook", (req, res) => {
@@ -47,24 +48,15 @@ app.post("/webhook", async (req, res) => {
 async function getAIReply(userMessage) {
   try {
     const response = await axios.post(
-      "https://api.anthropic.com/v1/messages",
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`,
       {
-        model: "claude-haiku-4-5-20251001",
-        max_tokens: 300,
-        system: process.env.AI_PROMPT || "Siz Instagram biznes akkaunt assistentidasiz. Savollarga qisqa, do'stona va professional javob bering.",
-        messages: [{ role: "user", content: userMessage }],
-      },
-      {
-        headers: {
-          "x-api-key": CLAUDE_API_KEY,
-          "anthropic-version": "2023-06-01",
-          "content-type": "application/json",
-        },
+        system_instruction: { parts: [{ text: AI_PROMPT }] },
+        contents: [{ parts: [{ text: userMessage }] }],
       }
     );
-    return response.data.content[0].text;
+    return response.data.candidates[0].content.parts[0].text;
   } catch (err) {
-    console.error("Claude API error:", err.message);
+    console.error("Gemini API error:", err.message);
     return "Hozir texnik muammo bor. Iltimos, keyinroq yozing.";
   }
 }
