@@ -17,6 +17,10 @@ PHONE = "+998 99 720 92 00"
 VIO = (70, 125, 255); MAG = (255, 150, 45); ORG = (245, 140, 43); LAV = (200, 218, 255); WHITE = (255, 255, 255)
 BRAND = (52, 82, 155); BG0 = (3, 7, 22)
 MAXW = W - 170
+TSCALE = 0.72
+def S(size):
+    """Main (large) text is scaled down; small labels keep their size."""
+    return int(size * TSCALE) if size >= 90 else size
 CX, CY = W / 2, H / 2
 
 def F(w, s):
@@ -48,6 +52,8 @@ SEGS = [
  (34.66, 37.85, "Agar farzandingiz tashxisli bo'lsa, markazimizga keling."),
  (38.20, 41.09, "Biz sizga qo'ldan kelgancha yordam beramiz."),
 ]
+SPEED = float(os.environ.get("SPEED", "1.1"))   # voice is time-stretched by this factor in the mix
+SEGS = [(a / SPEED, b / SPEED, t) for a, b, t in SEGS]
 def word_times(i):
     s, e, txt = SEGS[i]; ws = txt.split(); wts = [len(w) + 2 for w in ws]; tot = sum(wts)
     out = []; acc = s
@@ -140,6 +146,7 @@ def scaled(im, s):
 def kin(layer, txt, cx, cy, size, t0, t1, now, style="blur", top=WHITE, bot=LAV, weight=900, track=0, exit_=True, hold_scale=0.035):
     """Animated text: entrance by style, slow push while held, blur-out exit."""
     if now < t0 or now > t1 + 0.01: return
+    size = S(size)
     tw0 = text_img(txt, size, weight, top, bot, track).width
     if tw0 > MAXW: size = max(10, int(size * MAXW / tw0))
     u = now - t0; d = t1 - t0; ex = cl((now - (t1 - 0.22)) / 0.22) if exit_ else 0.0
@@ -379,7 +386,7 @@ def scene(now, L, d):
         u = now - (T["kasallik"] + 0.35)
         if u > 0:
             ex = cl((now - (t1 - 0.22)) / 0.22)
-            sz = 170; tw = text_img("KASALLIK", sz, 800, LAV, LAV, 4).width
+            sz = S(170); tw = text_img("KASALLIK", sz, 800, LAV, LAV, 4).width
             if tw > MAXW: tw = MAXW
             lx0 = CX - tw / 2 - 15
             d.line([(lx0, CY + 22), (lx0 + (tw + 30) * eo(u / 0.25), CY + 22)], fill=(255, 85, 80, int(255 * (1 - ex))), width=16)
@@ -413,7 +420,8 @@ def scene(now, L, d):
             kin(L, "BO'LMAYDI", CX, CY, 260, T["bolmaydi"], T["miya"], now, "drop", WHITE, MAG)
             if u > 0.25:
                 ex = cl((now - (T["miya"] - 0.22)) / 0.22); q = cl((u - 0.25) / 0.2)
-                d.rounded_rectangle([40, CY - 150, W - 40, CY + 150], radius=30, outline=(255, 85, 80, int(255 * q * (1 - ex))), width=9)
+                bw = min(W / 2 - 40, text_img("BO'LMAYDI", S(260), 900, WHITE, MAG).width / 2 + 60)
+                d.rounded_rectangle([CX - bw, CY - 115, CX + bw, CY + 115], radius=26, outline=(255, 85, 80, int(255 * q * (1 - ex))), width=9)
     elif now < T["dunyo"] - 0.15:
         t0 = T["miya"]; u = now - t0; ex = cl((now - (T["dunyo"] - 0.37)) / 0.22)
         label(L, "AUTIZM BU", CX, CY - 640, t0, T["dunyo"] - 0.15, now, 38)
@@ -533,9 +541,8 @@ def scene(now, L, d):
             d.arc(box, ang, ang + 220, fill=LAV + (int(110 * (1 - ex) * cl(u / 0.8)),), width=2)
             q = math.radians(ang + 220); px, py = CX + math.cos(q) * rr * 1.5, CY - 260 + math.sin(q) * rr * 0.45
             d.ellipse([px - 7, py - 7, px + 7, py + 7], fill=ORG + (int(230 * (1 - ex) * cl(u / 0.8)),))
-        label(L, "QO'LDAN KELGANCHA", CX, CY + 110, T["biz"] + 0.6, T["outro"], now, 38)
-        kin(L, "YORDAM", CX, CY + 260, 200, T["yordam"], T["outro"], now, "blur", WHITE, LAV)
-        kin(L, "BERAMIZ", CX, CY + 450, 200, T["yordam"] + 0.25, T["outro"], now, "blur", WHITE, MAG)
+        kin(L, "YORDAM", CX, CY + 170, 200, T["yordam"], T["outro"], now, "blur", WHITE, LAV)
+        kin(L, "BERAMIZ", CX, CY + 320, 200, T["yordam"] + 0.25, T["outro"], now, "blur", WHITE, MAG)
     else:
         outro(now, L, d)
     return bright
@@ -652,5 +659,5 @@ if __name__ == "__main__":
                              "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt", "yuv420p", OUT], stdin=subprocess.PIPE)
     for t in times: proc.stdin.write(frame(t).tobytes())
     proc.stdin.close(); proc.wait()
-    json.dump({"events": EV, "dur": DUR, "off": OFF}, open("events4.json", "w"))
+    json.dump({"events": EV, "dur": DUR, "off": OFF}, open("events5.json", "w"))
     print("frames", len(times), "dur", DUR)
