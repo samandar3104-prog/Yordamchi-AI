@@ -1,0 +1,20 @@
+[
+  {"t": 0.40, "sfx": "cine_strike", "gain_db": -20},
+  {"t": 0.55, "sfx": "digital_blip", "gain_db": -20},
+  {"t": 2.65, "sfx": "soft_swoosh", "align": "start", "gain_db": -6},
+  {"t": 3.10, "sfx": "cyber_shift", "gain_db": -22},
+  {"t": 3.40, "sfx": "digital_blip", "gain_db": -20},
+  {"t": 5.10, "sfx": "soft_swoosh", "align": "start", "gain_db": -10},
+  {"t": 8.75, "sfx": "noise_burst", "gain_db": -24},
+  {"t": 10.55, "sfx": "soft_swoosh", "align": "start", "gain_db": -8},
+  {"t": 11.35, "sfx": "digital_glitch", "gain_db": -24},
+  {"t": 14.10, "sfx": "ripple_texture", "gain_db": -22},
+  {"t": 16.05, "sfx": "distorting_glitch", "gain_db": -22},
+  {"t": 18.85, "sfx": "cyber_shift", "gain_db": -22},
+  {"t": 20.60, "sfx": "digital_blip", "gain_db": -20},
+  {"t": 23.95, "sfx": "alienated_warps", "gain_db": -24},
+  {"t": 24.30, "sfx": "click_ticks", "align": "start", "gain_db": -24},
+  {"t": 28.95, "sfx": "soft_swoosh", "align": "start", "gain_db": -6},
+  {"t": 29.15, "sfx": "ripple_texture_2", "gain_db": -24},
+  {"t": 31.95, "sfx": "impact_boom", "gain_db": -20}
+]
