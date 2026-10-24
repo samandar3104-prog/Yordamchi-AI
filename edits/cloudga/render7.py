@@ -535,13 +535,10 @@ def kinetic_sub(canvas, t, spec):
     wd, t0 = spec["line2"]
     k = spring(t - t0, w=12, z=0.5)
     if k > 0:
-        lay = shadowed(text_layer(wd, font("Regular", 118), GOLD, pad=14))
+        lay = shadowed(text_layer(wd, dfont("SemiBold", 112), CREAM, pad=14))
         sc = lerp(1.35, 1.0, k)
         a = clamp((t - t0) / 0.15) * (1 - out)
         paste_alpha(canvas, lay, 540 - lay.width * sc / 2, 1335 - 40 * out + lay.height * (1 - sc) / 2, a, sc)
-        u = ease_out((t - t0 - 0.2) / 0.5) * (1 - out)
-        if u > 0:
-            ImageDraw.Draw(canvas).line((540 - 150 * u, 1490, 540 + 150 * u, 1490), fill=with_alpha(GOLD, 0.9), width=3)
 
 T_NAME = 31.35
 def outro(canvas, t):
@@ -553,8 +550,6 @@ def outro(canvas, t):
     paste_alpha(canvas, nm, 540 - nm.width / 2, 1290 + (1 - k) * 30, clamp(k * 2))
     k2 = spring(t - t0 - 0.55, w=12, z=0.7)
     paste_alpha(canvas, rl, 540 - rl.width / 2, 1390 + (1 - k2) * 30, clamp(k2 * 2))
-    kk = ease_out((t - t0 - 0.7) / 0.45)
-    ImageDraw.Draw(canvas).line((540 - 130 * kk, 1462, 540 + 130 * kk, 1462), fill=GOLD, width=2)
 
 # ---------- frame ----------
 TRANS = 0.55

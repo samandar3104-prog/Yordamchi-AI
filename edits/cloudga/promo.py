@@ -136,7 +136,22 @@ def wipe_in(canvas, lay, x, y, t0, t):
     paste_alpha(canvas, piece, x - 36 * (1 - k), y)
 
 T1 = text_layer("To'liq video", font("Light", 84), CREAM)
-T2 = text_layer("YouTube'da", font("Regular", 128), GOLD, pad=14)
+@lru_cache(None)
+def dfont(w, s): return ImageFont.truetype(FD + f"InterDisplay-{w}.otf", s)
+T2_TEXT, T2_FONT = "YouTube'da", dfont("SemiBold", 124)
+
+def letters_rise(canvas, txt, f, cx, y, t0, t, fill, stagger=0.035):
+    """Letters rise one by one out of a clip line (no underline, no bounce)."""
+    total = f.getlength(txt)
+    x0 = cx - total / 2
+    asc, desc = f.getmetrics()
+    lh = asc + desc + 16
+    for i, ch in enumerate(txt):
+        k = ease_out((t - t0 - i * stagger) / 0.45)
+        if k <= 0: continue
+        lay = Image.new("RGBA", (int(f.getlength(ch)) + 24, lh), (0, 0, 0, 0))
+        ImageDraw.Draw(lay).text((12, 8 + (1 - k) * lh), ch, font=f, fill=fill)
+        paste_alpha(canvas, lay, x0 + f.getlength(txt[:i]) - 12, y, clamp(k * 1.4))
 
 def render(i):
     t = i / FPS
@@ -168,12 +183,7 @@ def render(i):
         if pb: paste_alpha(canvas, pb, px - pb.width / 2, cy - pb.height / 2, clamp(kp * 2))
     # texts (all inside the safe zone)
     wipe_in(canvas, T1, 540 - T1.width / 2, 520, 0.85, t)
-    k2 = spring(t - 1.8, w=12, z=0.5)
-    if k2 > 0:
-        sc = lerp(1.3, 1.0, k2)
-        paste_alpha(canvas, T2, 540 - T2.width * sc / 2, 1275 + T2.height * (1 - sc) / 2, clamp((t - 1.8) / 0.15), sc)
-        u = ease_out((t - 2.0) / 0.5)
-        ImageDraw.Draw(canvas).line((540 - 170 * u, 1440, 540 + 170 * u, 1440), fill=GOLD, width=3)
+    letters_rise(canvas, T2_TEXT, T2_FONT, 540, 1280, 1.8, t, CREAM)
     # fade from / to black edges
     if t < 0.25:
         canvas.alpha_composite(Image.new("RGBA", (W, H), with_alpha(BG0, 1 - t / 0.25)))
