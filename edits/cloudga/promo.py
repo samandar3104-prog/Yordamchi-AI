@@ -69,6 +69,7 @@ def card_frame(t):
     kb = 1.0 + 0.06 * ease_io(t / DUR)
     sw, sh = THUMB_IM.size
     cw = sw / kb; ch = cw * CH / CW
+    if ch > sh: ch = sh; cw = ch * CW / CH
     box = ((sw - cw) / 2, (sh - ch) / 2, (sw + cw) / 2, (sh + ch) / 2)
     im = THUMB_IM.resize((CW, CH), Image.LANCZOS, box=box).convert("RGBA")
     d = ImageDraw.Draw(im)
