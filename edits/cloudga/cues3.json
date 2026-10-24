@@ -1,0 +1,14 @@
+[
+  {"t": 0.40, "sfx": "cine_strike", "gain_db": -20},
+  {"t": 0.55, "sfx": "digital_blip", "gain_db": -20},
+  {"t": 2.65, "sfx": "soft_swoosh", "align": "start", "gain_db": -6},
+  {"t": 3.10, "sfx": "cyber_shift", "gain_db": -22},
+  {"t": 8.75, "sfx": "noise_burst", "gain_db": -24},
+  {"t": 14.10, "sfx": "ripple_texture", "gain_db": -22},
+  {"t": 16.05, "sfx": "distorting_glitch", "gain_db": -22},
+  {"t": 18.85, "sfx": "cyber_shift", "gain_db": -22},
+  {"t": 19.20, "sfx": "static_whoosh", "align": "start", "gain_db": -26},
+  {"t": 23.95, "sfx": "alienated_warps", "gain_db": -24},
+  {"t": 28.95, "sfx": "soft_swoosh", "align": "start", "gain_db": -6},
+  {"t": 31.95, "sfx": "impact_boom", "gain_db": -20}
+]
