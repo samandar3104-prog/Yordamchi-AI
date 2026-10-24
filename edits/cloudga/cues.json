@@ -1,0 +1,16 @@
+[
+  {"t": 0.30, "sfx": "cyber_shift", "gain_db": -9},
+  {"t": 0.45, "sfx": "soft_swoosh", "align": "start", "gain_db": 2},
+  {"t": 0.62, "sfx": "digital_blip", "gain_db": -12},
+  {"t": 1.10, "sfx": "ripple_texture", "align": "start", "gain_db": -16},
+  {"t": 3.05, "sfx": "digital_blip", "gain_db": -9},
+  {"t": 8.70, "sfx": "digital_blip", "gain_db": -9},
+  {"t": 14.05, "sfx": "digital_blip", "gain_db": -9},
+  {"t": 16.30, "sfx": "cine_strike", "gain_db": -15},
+  {"t": 18.80, "sfx": "digital_blip", "gain_db": -9},
+  {"t": 21.00, "sfx": "basscrack", "gain_db": -16},
+  {"t": 23.90, "sfx": "digital_blip", "gain_db": -9},
+  {"t": 28.90, "sfx": "digital_blip", "gain_db": -9},
+  {"t": 31.90, "sfx": "soft_swoosh", "align": "start", "gain_db": 2},
+  {"t": 32.40, "sfx": "impact_boom", "gain_db": -11}
+]
