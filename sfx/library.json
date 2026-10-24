@@ -1,0 +1,21 @@
+{
+  "_info": "SFX kutubxonasi. 'hit' — SFX faylidagi eng kuchli nuqta (soniya). Ovozni kesim/urg'u momentiga moslash uchun shu nuqta video vaqtiga to'g'rilanadi.",
+  "sfx": {
+    "cyber_shift":       { "file": "pack1/cyber_shift.wav",       "dur": 1.40, "hit": 0.77, "type": "transition", "desc": "Yuqori chastotali raqamli shift/whoosh — sahna almashinuvi, tez o'tish" },
+    "cine_strike":       { "file": "pack1/cine_strike.wav",       "dur": 1.24, "hit": 0.26, "type": "impact",     "desc": "Kinematik zarba + bass — kuchli urg'u, sarlavha chiqishi" },
+    "distorting_glitch": { "file": "pack1/distorting_glitch.wav", "dur": 1.43, "hit": 0.54, "type": "glitch",     "desc": "Past, buzilgan glitch — glitch effekt, xato/tahdid hissi" },
+    "basscrack":         { "file": "pack1/basscrack.wav",         "dur": 1.21, "hit": 0.10, "type": "impact",     "desc": "Bass + crack — beat drop, keskin kesim" },
+    "ripple_texture":    { "file": "pack1/ripple_texture.wav",    "dur": 0.98, "hit": 0.35, "type": "texture",    "desc": "To'lqinli tekstura — matn/element paydo bo'lishi" },
+    "ripple_texture_2":  { "file": "pack1/ripple_texture_2.wav",  "dur": 1.68, "hit": 0.23, "type": "texture",    "desc": "Chuqurroq to'lqinli tekstura — sekin o'tish, zoom" },
+    "alienated_warps":   { "file": "pack1/alienated_warps.wav",   "dur": 1.52, "hit": 0.88, "type": "transition", "desc": "Begona warp/buralish — zoom-in, burilish, sirli moment" },
+
+    "digital_blip":      { "file": "pack2/digital_blip.wav",      "dur": 0.40, "hit": 0.21, "type": "ui",         "desc": "Qisqa raqamli blip — matn pop, UI, kichik urg'u" },
+    "noise_burst":       { "file": "pack2/noise_burst.wav",       "dur": 1.38, "hit": 0.34, "type": "transition", "desc": "Shovqin portlashi + bass — energiyali o'tish" },
+    "impact_boom":       { "file": "pack2/impact_boom.wav",       "dur": 0.97, "hit": 0.16, "type": "impact",     "desc": "Zarba + uzun past boom dumi — katta urg'u, final" },
+    "click_ticks":       { "file": "pack2/click_ticks.wav",       "dur": 1.26, "hit": 0.80, "type": "rhythm",     "desc": "Ketma-ket past klik/tiklar — sanash, ritmik kesimlar, matn yozilishi" },
+    "static_whoosh":     { "file": "pack2/static_whoosh.wav",     "dur": 2.35, "hit": 0.17, "type": "texture",    "desc": "Uzun statik whoosh — fon tekstura, uzun o'tish" },
+    "digital_glitch":    { "file": "pack2/digital_glitch.wav",    "dur": 0.93, "hit": 0.66, "type": "glitch",     "desc": "Yuqori raqamli glitch — glitch/RGB split effekt" },
+    "soft_swoosh":       { "file": "pack2/soft_swoosh.wav",       "dur": 0.74, "hit": 0.37, "type": "transition", "desc": "Yumshoq swoosh (past ovoz) — slide, yengil o'tish" },
+    "static_riser":      { "file": "pack2/static_riser.wav",      "dur": 2.04, "hit": 0.80, "type": "riser",      "desc": "Statik shovqinli riser — kulminatsiyadan oldin kuchayish" }
+  }
+}
