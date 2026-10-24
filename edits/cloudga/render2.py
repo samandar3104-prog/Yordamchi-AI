@@ -147,7 +147,7 @@ def speaker_crop(src, w, h, z):
     cy = clamp(cy_t, ry0 + ch / 2, ry1 - ch / 2)
     box = (cx - cw / 2, cy - ch / 2, cx + cw / 2, cy + ch / 2)
     im = src.resize((max(2, int(w)), max(2, int(h))), Image.BICUBIC, box=box)
-    return grade(im).filter(ImageFilter.UnsharpMask(radius=2, percent=55, threshold=2))
+    return im.filter(ImageFilter.UnsharpMask(radius=2, percent=55, threshold=2))  # speaker keeps original colors
 
 def rr_mask(w, h, r):
     m = Image.new("L", (w, h), 0)
