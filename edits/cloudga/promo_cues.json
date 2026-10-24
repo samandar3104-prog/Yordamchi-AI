@@ -1,0 +1,7 @@
+[
+  {"t": 0.15, "sfx": "cyber_shift", "align": "start", "gain_db": -16},
+  {"t": 0.85, "sfx": "soft_swoosh", "align": "start", "gain_db": -3},
+  {"t": 1.40, "sfx": "digital_blip", "gain_db": -13},
+  {"t": 1.85, "sfx": "cine_strike", "gain_db": -14},
+  {"t": 2.60, "sfx": "ripple_texture", "align": "start", "gain_db": -18}
+]
