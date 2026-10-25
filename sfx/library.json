@@ -1,21 +1,257 @@
 {
-  "_info": "SFX kutubxonasi. 'hit' — SFX faylidagi eng kuchli nuqta (soniya). Ovozni kesim/urg'u momentiga moslash uchun shu nuqta video vaqtiga to'g'rilanadi.",
-  "sfx": {
-    "cyber_shift":       { "file": "pack1/cyber_shift.wav",       "dur": 1.40, "hit": 0.77, "type": "transition", "desc": "Yuqori chastotali raqamli shift/whoosh — sahna almashinuvi, tez o'tish" },
-    "cine_strike":       { "file": "pack1/cine_strike.wav",       "dur": 1.24, "hit": 0.26, "type": "impact",     "desc": "Kinematik zarba + bass — kuchli urg'u, sarlavha chiqishi" },
-    "distorting_glitch": { "file": "pack1/distorting_glitch.wav", "dur": 1.43, "hit": 0.54, "type": "glitch",     "desc": "Past, buzilgan glitch — glitch effekt, xato/tahdid hissi" },
-    "basscrack":         { "file": "pack1/basscrack.wav",         "dur": 1.21, "hit": 0.10, "type": "impact",     "desc": "Bass + crack — beat drop, keskin kesim" },
-    "ripple_texture":    { "file": "pack1/ripple_texture.wav",    "dur": 0.98, "hit": 0.35, "type": "texture",    "desc": "To'lqinli tekstura — matn/element paydo bo'lishi" },
-    "ripple_texture_2":  { "file": "pack1/ripple_texture_2.wav",  "dur": 1.68, "hit": 0.23, "type": "texture",    "desc": "Chuqurroq to'lqinli tekstura — sekin o'tish, zoom" },
-    "alienated_warps":   { "file": "pack1/alienated_warps.wav",   "dur": 1.52, "hit": 0.88, "type": "transition", "desc": "Begona warp/buralish — zoom-in, burilish, sirli moment" },
-
-    "digital_blip":      { "file": "pack2/digital_blip.wav",      "dur": 0.40, "hit": 0.21, "type": "ui",         "desc": "Qisqa raqamli blip — matn pop, UI, kichik urg'u" },
-    "noise_burst":       { "file": "pack2/noise_burst.wav",       "dur": 1.38, "hit": 0.34, "type": "transition", "desc": "Shovqin portlashi + bass — energiyali o'tish" },
-    "impact_boom":       { "file": "pack2/impact_boom.wav",       "dur": 0.97, "hit": 0.16, "type": "impact",     "desc": "Zarba + uzun past boom dumi — katta urg'u, final" },
-    "click_ticks":       { "file": "pack2/click_ticks.wav",       "dur": 1.26, "hit": 0.80, "type": "rhythm",     "desc": "Ketma-ket past klik/tiklar — sanash, ritmik kesimlar, matn yozilishi" },
-    "static_whoosh":     { "file": "pack2/static_whoosh.wav",     "dur": 2.35, "hit": 0.17, "type": "texture",    "desc": "Uzun statik whoosh — fon tekstura, uzun o'tish" },
-    "digital_glitch":    { "file": "pack2/digital_glitch.wav",    "dur": 0.93, "hit": 0.66, "type": "glitch",     "desc": "Yuqori raqamli glitch — glitch/RGB split effekt" },
-    "soft_swoosh":       { "file": "pack2/soft_swoosh.wav",       "dur": 0.74, "hit": 0.37, "type": "transition", "desc": "Yumshoq swoosh (past ovoz) — slide, yengil o'tish" },
-    "static_riser":      { "file": "pack2/static_riser.wav",      "dur": 2.04, "hit": 0.80, "type": "riser",      "desc": "Statik shovqinli riser — kulminatsiyadan oldin kuchayish" }
+ "_info": "SFX kutubxonasi. 'hit' — SFX faylidagi eng kuchli nuqta (soniya). Ovozni kesim/urg'u momentiga moslash uchun shu nuqta video vaqtiga to'g'rilanadi.",
+ "sfx": {
+  "cyber_shift": {
+   "file": "pack1/cyber_shift.wav",
+   "dur": 1.4,
+   "hit": 0.77,
+   "type": "transition",
+   "desc": "Yuqori chastotali raqamli shift/whoosh — sahna almashinuvi, tez o'tish"
+  },
+  "cine_strike": {
+   "file": "pack1/cine_strike.wav",
+   "dur": 1.24,
+   "hit": 0.26,
+   "type": "impact",
+   "desc": "Kinematik zarba + bass — kuchli urg'u, sarlavha chiqishi"
+  },
+  "distorting_glitch": {
+   "file": "pack1/distorting_glitch.wav",
+   "dur": 1.43,
+   "hit": 0.54,
+   "type": "glitch",
+   "desc": "Past, buzilgan glitch — glitch effekt, xato/tahdid hissi"
+  },
+  "basscrack": {
+   "file": "pack1/basscrack.wav",
+   "dur": 1.21,
+   "hit": 0.1,
+   "type": "impact",
+   "desc": "Bass + crack — beat drop, keskin kesim"
+  },
+  "ripple_texture": {
+   "file": "pack1/ripple_texture.wav",
+   "dur": 0.98,
+   "hit": 0.35,
+   "type": "texture",
+   "desc": "To'lqinli tekstura — matn/element paydo bo'lishi"
+  },
+  "ripple_texture_2": {
+   "file": "pack1/ripple_texture_2.wav",
+   "dur": 1.68,
+   "hit": 0.23,
+   "type": "texture",
+   "desc": "Chuqurroq to'lqinli tekstura — sekin o'tish, zoom"
+  },
+  "alienated_warps": {
+   "file": "pack1/alienated_warps.wav",
+   "dur": 1.52,
+   "hit": 0.88,
+   "type": "transition",
+   "desc": "Begona warp/buralish — zoom-in, burilish, sirli moment"
+  },
+  "digital_blip": {
+   "file": "pack2/digital_blip.wav",
+   "dur": 0.4,
+   "hit": 0.21,
+   "type": "ui",
+   "desc": "Qisqa raqamli blip — matn pop, UI, kichik urg'u"
+  },
+  "noise_burst": {
+   "file": "pack2/noise_burst.wav",
+   "dur": 1.38,
+   "hit": 0.34,
+   "type": "transition",
+   "desc": "Shovqin portlashi + bass — energiyali o'tish"
+  },
+  "impact_boom": {
+   "file": "pack2/impact_boom.wav",
+   "dur": 0.97,
+   "hit": 0.16,
+   "type": "impact",
+   "desc": "Zarba + uzun past boom dumi — katta urg'u, final"
+  },
+  "click_ticks": {
+   "file": "pack2/click_ticks.wav",
+   "dur": 1.26,
+   "hit": 0.8,
+   "type": "rhythm",
+   "desc": "Ketma-ket past klik/tiklar — sanash, ritmik kesimlar, matn yozilishi"
+  },
+  "static_whoosh": {
+   "file": "pack2/static_whoosh.wav",
+   "dur": 2.35,
+   "hit": 0.17,
+   "type": "texture",
+   "desc": "Uzun statik whoosh — fon tekstura, uzun o'tish"
+  },
+  "digital_glitch": {
+   "file": "pack2/digital_glitch.wav",
+   "dur": 0.93,
+   "hit": 0.66,
+   "type": "glitch",
+   "desc": "Yuqori raqamli glitch — glitch/RGB split effekt"
+  },
+  "soft_swoosh": {
+   "file": "pack2/soft_swoosh.wav",
+   "dur": 0.74,
+   "hit": 0.37,
+   "type": "transition",
+   "desc": "Yumshoq swoosh (past ovoz) — slide, yengil o'tish"
+  },
+  "static_riser": {
+   "file": "pack2/static_riser.wav",
+   "dur": 2.04,
+   "hit": 0.8,
+   "type": "riser",
+   "desc": "Statik shovqinli riser — kulminatsiyadan oldin kuchayish"
+  },
+  "ui_pop_1": {
+   "file": "pack3/ui_pop_1.wav",
+   "dur": 0.82,
+   "hit": 0.22,
+   "type": "ui",
+   "desc": "Yumshoq UI pop — element paydo bo'lishi"
+  },
+  "ui_chime": {
+   "file": "pack3/ui_chime.wav",
+   "dur": 1.4,
+   "hit": 0.04,
+   "type": "ui",
+   "desc": "Yengil chime — muvaffaqiyat, tasdiq"
+  },
+  "ui_pop_2": {
+   "file": "pack3/ui_pop_2.wav",
+   "dur": 0.93,
+   "hit": 0.14,
+   "type": "ui",
+   "desc": "Past UI pop — karta chiqishi"
+  },
+  "ui_tap_tail": {
+   "file": "pack3/ui_tap_tail.wav",
+   "dur": 1.19,
+   "hit": 0.03,
+   "type": "ui",
+   "desc": "Tap + yengil dum — tugma bosilishi"
+  },
+  "ui_swipe": {
+   "file": "pack3/ui_swipe.wav",
+   "dur": 1.32,
+   "hit": 0.25,
+   "type": "transition",
+   "desc": "UI swipe — panel siljishi"
+  },
+  "ui_click": {
+   "file": "pack3/ui_click.wav",
+   "dur": 0.56,
+   "hit": 0.27,
+   "type": "ui",
+   "desc": "Aniq klik — kursor bosishi"
+  },
+  "ui_texture": {
+   "file": "pack3/ui_texture.wav",
+   "dur": 1.48,
+   "hit": 0.14,
+   "type": "texture",
+   "desc": "Yengil UI tekstura — fon harakati"
+  },
+  "ui_notify": {
+   "file": "pack3/ui_notify.wav",
+   "dur": 1.57,
+   "hit": 0.03,
+   "type": "ui",
+   "desc": "Bildirishnoma ovozi"
+  },
+  "button_1": {
+   "file": "pack4/button_1.wav",
+   "dur": 0.32,
+   "hit": 0.08,
+   "type": "ui",
+   "desc": "Tugma 1 — qisqa klik"
+  },
+  "button_2": {
+   "file": "pack4/button_2.wav",
+   "dur": 0.28,
+   "hit": 0.04,
+   "type": "ui",
+   "desc": "Tugma 2 — yuqori klik"
+  },
+  "button_3": {
+   "file": "pack4/button_3.wav",
+   "dur": 0.26,
+   "hit": 0.17,
+   "type": "ui",
+   "desc": "Tugma 3 — past klik"
+  },
+  "combo": {
+   "file": "pack4/combo.wav",
+   "dur": 1.16,
+   "hit": 0.23,
+   "type": "impact",
+   "desc": "Combo — bir nechta element birga chiqishi"
+  },
+  "sparkle": {
+   "file": "pack4/sparkle.wav",
+   "dur": 1.24,
+   "hit": 0.54,
+   "type": "texture",
+   "desc": "Sparkle — yaltirash, yangi daraja"
+  },
+  "deep_whoosh": {
+   "file": "pack4/deep_whoosh.wav",
+   "dur": 0.9,
+   "hit": 0.17,
+   "type": "transition",
+   "desc": "Chuqur whoosh — katta o'tish"
+  },
+  "typing": {
+   "file": "pack4/typing.wav",
+   "dur": 0.98,
+   "hit": 0.06,
+   "type": "rhythm",
+   "desc": "Klaviatura yozish"
+  },
+  "low_rise": {
+   "file": "pack5/low_rise.wav",
+   "dur": 0.85,
+   "hit": 0.76,
+   "type": "riser",
+   "desc": "Past riser — qisqa kuchayish"
+  },
+  "apply_keyboard": {
+   "file": "pack5/apply_keyboard.wav",
+   "dur": 1.07,
+   "hit": 0.09,
+   "type": "rhythm",
+   "desc": "Klaviatura — matn kiritish"
+  },
+  "gear_click": {
+   "file": "pack5/gear_click.wav",
+   "dur": 1.0,
+   "hit": 0.71,
+   "type": "ui",
+   "desc": "Mexanik klik — sozlash, integratsiya"
+  },
+  "riser": {
+   "file": "pack5/riser.wav",
+   "dur": 1.07,
+   "hit": 1.0,
+   "type": "riser",
+   "desc": "Riser — kulminatsiyaga olib boradi"
+  },
+  "glass_shine": {
+   "file": "pack5/glass_shine.wav",
+   "dur": 0.98,
+   "hit": 0.37,
+   "type": "texture",
+   "desc": "Shisha yaltirashi — premium moment"
+  },
+  "inertia_ramp": {
+   "file": "pack5/inertia_ramp.wav",
+   "dur": 1.68,
+   "hit": 0.21,
+   "type": "transition",
+   "desc": "Inertia ramp — tezlashib kelish"
   }
+ }
 }
