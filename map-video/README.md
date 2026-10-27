@@ -2,7 +2,11 @@
 
 Vertikal (1080×1920) 10 soniyalik 3D xarita videosi: Uchtepa, Chilonzor, Farhod bozori, Vatan kinoteatri, Algoritm, Zangiota va "Bizning markaz".
 
-Koordinatalar taxminiy (stilize qilingan xarita). Joylarni `index.html` ichidagi `PLACES` obyektida o'zgartirish mumkin.
+Xarita foydalanuvchi bergan Toshkent xaritasi uslubida qayta chizilgan: shahar chegarasi o'sha rasmdan ajratib olingan (`make_basemap.py` -> `basemap.jpg`, `geo.json`). Koordinatalar shu rasm pikselida; joylarni `index.html` ichidagi `PLACES` obyektida o'zgartirish mumkin.
+
+```bash
+python3 make_basemap.py reference_map.png .   # opencv-python-headless, pillow kerak
+```
 
 ```bash
 npm i three@0.160.0 playwright
