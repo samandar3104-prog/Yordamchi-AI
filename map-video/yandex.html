@@ -34,19 +34,17 @@
   #caption { position: absolute; left: 70px; right: 70px; bottom: 200px; text-align: center; font-size: 56px; line-height: 1.28; font-weight: 800; color: rgba(255,255,255,.38); }
   #caption span.on { color: #ffffff; }
   #caption span.key.on { color: #ffb547; }
-  #credit { position: absolute; right: 24px; bottom: 24px; font-size: 18px; color: rgba(255,255,255,.55); }
+  #credit { position: absolute; right: 24px; bottom: 24px; font-size: 18px; color: rgba(60,55,50,.55); }
 </style>
 </head>
 <body>
 <canvas id="c" width="1080" height="1920"></canvas>
 <div id="overlay">
   <div class="topfade"></div>
-  <div class="botfade"></div>
   <div id="pois"></div>
   <div id="labels"></div>
   <div id="title"><div class="city">ТАШКЕНТ</div><div class="sub">TOSHKENT SHAHRI</div></div>
   <div id="chip"><i></i>Ташкент · Учтепа · Чиланзар</div>
-  <div id="caption"></div>
   <div id="credit">© OpenStreetMap contributors, Overture Maps</div>
 </div>
 
@@ -340,7 +338,7 @@ window.renderAt = function (t) {
   const poiOp = 1 - ramp(dist, 1100, 500);
   pois.forEach(o => {
     const sp = project(v3(o.p, 0));
-    const inside = sp.vis && sp.x > -50 && sp.x < W + 50 && sp.y > 250 && sp.y < H - 520;
+    const inside = sp.vis && sp.x > -50 && sp.x < W + 50 && sp.y > 250 && sp.y < H - 80;
     o.el.style.opacity = inside ? poiOp * ramp(t, 1.2, 0.5) : 0;
     o.el.style.transform = `translate(${sp.x - 20}px, ${sp.y - 20}px)`;
   });
@@ -367,10 +365,6 @@ window.renderAt = function (t) {
   titleEl.style.transform = `translateY(${-30 * ramp(t, 0.75, 0.4)}px)`;
   chipEl.style.opacity = ramp(t, 0.9, 0.4);
 
-  let ci = 0; for (let i = 0; i < CHUNK_T.length; i++) if (t >= CHUNK_T[i]) ci = i;
-  if (capEl.dataset.ci !== String(ci)) { capEl.innerHTML = ''; capSpans[ci].forEach(s => capEl.appendChild(s)); capEl.dataset.ci = ci; }
-  const [s0] = CHUNKS[ci];
-  capSpans[ci].forEach((s, j) => s.classList.toggle('on', t >= WORDS[s0 + j][1]));
 
   renderer.render(scene, camera);
   return true;
