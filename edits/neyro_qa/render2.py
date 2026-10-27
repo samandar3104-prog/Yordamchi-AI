@@ -849,7 +849,7 @@ CAPTIONS[:] = [
 def cap_layer(txt, style):
     return shadowed(text_layer(txt, STY[style][0](), WHITE, pad=8))
 
-FULL_CAP_Y = 1200
+FULL_CAP_Y = 1390   # below the neck, in front of the chest
 def rise_words_c(canvas, text, style, y, t0, t, out):
     f = STY[style][0](); lh = STY[style][1]
     total = f.getlength(text)
