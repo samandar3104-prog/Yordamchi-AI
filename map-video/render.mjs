@@ -11,7 +11,7 @@ const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=sw
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
 page.on('console', m => console.log('[page]', m.text()));
 page.on('pageerror', e => console.log('[err]', e.message));
-await page.goto('http://127.0.0.1:8765/index.html');
+await page.goto('http://127.0.0.1:8765/' + (process.env.PAGE || 'index.html'));
 await page.waitForFunction(() => window.ready === true, null, { timeout: 120000 });
 await page.evaluate(() => document.fonts.ready);
 
