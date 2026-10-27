@@ -213,7 +213,7 @@ const pins = {
   farhad:   makePin(PL.farhad, 'Фархадский рынок', 'Farhod bozori', '#ff9f1c'),
   vatan:    makePin(PL.vatan, 'Кинотеатр «Ватан»', 'Vatan kinoteatri', '#ff9f1c'),
   algoritm: makePin(PL.algoritm, 'Алгоритм', 'Algoritm', '#ff9f1c'),
-  center:   makePin(PL.center, 'НАШ ЦЕНТР', 'Чиланзар 12/56', '#e5383b', 'center'),
+  center:   makePin(PL.center, 'НАШ ЦЕНТР', 'Чиланзар 12/56 · ул. Ширин', '#e5383b', 'center'),
 };
 const PIN_T = { metro: 2.15, farhad: 2.7, vatan: 3.88, algoritm: 5.04, center: 7.2 };
 
@@ -374,6 +374,12 @@ window.renderAt = function (t) {
 
   renderer.render(scene, camera);
   return true;
+};
+window.groundAt = function (t, x, y) {
+  window.renderAt(t);
+  const ray = new THREE.Raycaster(); ray.setFromCamera(new THREE.Vector2(x / W * 2 - 1, -(y / H * 2 - 1)), camera);
+  const p = new THREE.Vector3(); ray.ray.intersectPlane(new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), p);
+  return [p.x, p.z, p.x / KX + LON0, -p.z / KZ + LAT0];
 };
 window.ready = true;
 </script>
