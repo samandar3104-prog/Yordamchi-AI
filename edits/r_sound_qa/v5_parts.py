@@ -514,7 +514,7 @@ def cart_home(lt, t):
     which = "rocket" if lt < 2.1 else "rainbow"
     fl = clamp((lt - 0.4) / 0.35) if lt < 2.1 else clamp((lt - 2.3) / 0.35)
     fc = flash_card(which, 0.5 + 0.5 * fl)
-    paste_alpha(c, fc, hx - fc.width / 2 + 10, hy - fc.height + 30, 1.0)
+    paste_alpha(c, fc, hx - fc.width / 2 + 10, max(520, hy - fc.height + 30), 1.0)
     return c
 
 PANELS.update({"intro": cart_intro, "choice": cart_choice, "family": cart_family, "practice": cart_practice, "age": cart_age,
