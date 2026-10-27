@@ -361,3 +361,17 @@ def cart_logoped(lt, t):
 
 PANELS.update({"ask": cart_ask, "stutter": cart_stutter, "syrup": cart_syrup, "causes": cart_causes, "home": cart_home,
                "nomagic": cart_nomagic, "exercise": cart_exercise, "logoped": cart_logoped})
+
+# ---------- bigger characters (head-top kept, body grows downward) ----------
+BOOST = 1.3
+_kid_raw, _girl_raw, _adult_raw, _adult2_raw = kid, girl, adult, adult2
+def kid(d, cx, cy, s, t, **kw): return _kid_raw(d, cx, cy + 105 * s * (BOOST - 1), s * BOOST, t, **kw)
+def girl(d, cx, cy, s, t, **kw):
+    global kid
+    k_ = kid; kid = _kid_raw
+    try: _girl_raw(d, cx, cy + 105 * s * (BOOST - 1), s * BOOST, t, **kw)
+    finally: kid = k_
+def adult(d, cx, cy, s, t, style, **kw): return _adult_raw(d, cx, cy + 124 * s * (BOOST - 1), s * BOOST, t, style, **kw)
+def adult2(d, cx, cy, s, t, style, **kw):
+    if style != "doctor": return adult(d, cx, cy, s, t, style, **kw)
+    return _adult2_raw(d, cx, cy + 110 * s * (BOOST - 1), s * BOOST, t, style, **kw)
