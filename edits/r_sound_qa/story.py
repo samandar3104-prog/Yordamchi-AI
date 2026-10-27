@@ -1,0 +1,41 @@
+# "R" sound: logoped or neurologist? — shared timeline for render + SFX cues
+SEG = [
+    (0.00, 1.80, "full", None, 1.10),
+    (1.80, 4.50, "split", "intro", 1.00),
+    (4.50, 7.05, "split", "choice", 1.12),
+    (7.05, 11.50, "split", "family", 1.00),
+    (11.50, 14.30, "full", None, 1.00),
+    (14.30, 19.00, "split", "practice", 1.14),
+    (19.00, 24.40, "split", "age", 1.00),
+    (24.40, 27.30, "full", None, 1.04),
+    (27.30, 33.90, "split", "exam", 1.12),
+    (33.90, 37.40, "split", "refer", 1.00),
+    (37.40, 39.80, "full", None, 1.00),
+    (39.80, 42.20, "split", "success", 1.14),
+    (42.20, 46.40, "split", "home", 1.00),
+    (46.40, 50.30, "split", "follow", 1.00),
+    (50.30, 99.0, "full", None, 1.10),
+]
+TAP_T = 49.38
+
+CAPTIONS = [
+    ([("1 daqiqada", "thin", 0.05), ("1 savolga javob", "bold", 0.84)], 1.74),
+    ([("Savollarni oldindan", "thin", 2.12), ("o'qimaganman", "bold", 3.30)], 4.40),
+    ([("Logopedga yoki", "thin", 4.58), ("nevropatologga?", "bold", 5.68)], 6.98),
+    ([("«R» harfini ayta olmaydi,", "thin", 7.12), ("«vahima qilyapsiz»", "bold", 9.14), ("deyishadi uydagilar", "thin", 10.40)], 11.42),
+    ([("Agar farzandingiz «R»ni", "thin", 11.54), ("talaffuz qilolmasa", "bold", 12.90)], 14.22),
+    ([("unda logoped", "thin", 14.34), ("mashg'uloti kerak", "bold", 15.84)], 17.15),
+    ([("Nevropatologga", "thin", 17.26), ("borishga hojat yo'q", "bold", 17.90)], 18.92),
+    ([("Agar bola 5 yoshdan", "thin", 19.20), ("o'tgan bo'lsa", "bold", 20.56)], 21.15),
+    ([("va tovushlarni noto'g'ri", "thin", 21.24), ("talaffuz qilsa,", "bold", 22.32)], 24.32),
+    ([("logoped-defektologga", "thin", 25.00), ("borasiz", "bold", 26.34)], 27.22),
+    ([("Logoped nevrologik", "thin", 27.36), ("muammo kuzatsa", "bold", 29.10)], 30.88),
+    ([("va dori bilan", "thin", 30.96), ("davolash kerak bo'lsa", "bold", 32.94)], 33.84),
+    ([("albatta", "thin", 34.54), ("nevropatologga", "bold", 35.64), ("yo'naltiradi", "thin", 36.32)], 37.34),
+    ([("Agar unaqa bo'lmasa,", "thin", 37.60), ("mashg'ulotning o'zi", "bold", 38.70)], 39.74),
+    ([("yaxshi natijalarga", "thin", 39.86), ("erishasiz", "bold", 41.02)], 42.14),
+    ([("Faqat uyda ham", "thin", 42.20), ("mustahkamlash kerak", "bold", 43.40)], 44.32),
+    ([("uyda ham ishlash kerak", "thin", 44.38), ("farzandingiz bilan", "bold", 45.66)], 46.38),
+    ([("Sahifamga hali", "thin", 46.48), ("obuna bo'lmagan bo'lsangiz,", "thin", 47.90), ("tezroq obuna bo'ling", "bold", 49.02)], 50.24),
+    ([("Ota-onalar va mutaxassislar", "thin", 50.30), ("uchun foydali videolar", "bold", 52.34), ("joylab boraman", "thin", 53.02)], 99),
+]
