@@ -205,7 +205,7 @@ def cart_causes(lt, t):
     if lt > tn:
         k = spring(lt - tn, w=11, z=0.5)
         br = icon_brain(170)
-        g = glow(300, TERRA); gg = g.resize((int(280 * k), int(280 * k))); c.alpha_composite(gg, (int(850 - gg.width / 2), int(690 - gg.height / 2)))
+        g = glow(300, TERRA); gg = g.resize((max(1, int(280 * k)), max(1, int(280 * k)))); c.alpha_composite(gg, (int(850 - gg.width / 2), int(690 - gg.height / 2)))
         paste_alpha(c, br, 850 - 85 * k, 690 - 85 * k, clamp(k * 2), k)
         if int(lt * 8) % 2 == 0:
             dd.line([(800, 640), (830, 680), (812, 690), (850, 740)], fill=rgba(GOLD, 0.9), width=6)
@@ -283,7 +283,7 @@ def cart_nomagic(lt, t):
         sh = 6 * math.sin(u * 30) * (1 - clamp((u - 0.9) / 0.5)) if 0.9 < u < 1.4 else 0
         y = 700 + 40 * (1 - k) + fall * 300
         if dead < 1:
-            g = glow(260, GOLD); gg = g.resize((int(220 * k), int(220 * k)))
+            g = glow(260, GOLD); gg = g.resize((max(1, int(220 * k)), max(1, int(220 * k))))
             gg.putalpha(gg.getchannel("A").point(lambda v: int(v * 0.5 * (1 - dead))))
             c.alpha_composite(gg, (int(x - gg.width / 2), int(y - gg.height / 2)))
         paste_alpha(c, im, x - im.width * k / 2 + sh, y - im.height * k / 2, clamp(k * 2) * (1 - 0.45 * dead) * (1 - fall), k)
