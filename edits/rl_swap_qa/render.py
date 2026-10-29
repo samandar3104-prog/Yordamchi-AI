@@ -2863,26 +2863,29 @@ PANELS.update({"home": cart_home})
 RIGS.update({
     "girl": dict(img="girl_cut", eyes=[(255, 275, 48, 42), (452, 275, 48, 42)], mouth=(350, 380, 70), head=(350, 250, 230), neck=(350, 445),
                  skin=(246, 202, 180), lips=(205, 110, 100)),
+    "mom3": dict(img="mom3_cut", eyes=[(140, 192, 30, 22), (238, 192, 30, 22)], mouth=(190, 262, 38), head=(190, 190, 125), neck=(195, 320),
+                 skin=(240, 192, 162), lips=(200, 110, 100)),
     "mom2": dict(img="mom2_cut", eyes=[(152, 212, 26, 24), (277, 212, 26, 24)], mouth=(217, 285, 40), head=(215, 215, 150), neck=(215, 345),
                  skin=(240, 194, 166), lips=(205, 120, 110)),
 })
 LIMBS = {
     "girl": dict(arms=[((205, 455), (55, 300), 72, 1), ((495, 455), (650, 300), 72, -1)], brows=[(270, 182), (430, 182)], brow_r=55),
+    "mom3": dict(arms=[((95, 400), (78, 555), 46, 1)], hand=(255, 565, 70), brows=[(170, 146), (218, 146)], brow_r=30),
     "mom2": dict(arms=[((105, 450), (62, 690), 48, 1), ((322, 450), (337, 700), 48, -1)], brows=[(187, 158), (247, 155)], brow_r=32),
     "logo": dict(arms=[((324, 254), (461, 103), 70, 0)], hand=(110, 360, 80), brows=[(126, 90), (160, 86)], brow_r=24),
 }
-MOUTH = {"girl": (350, 380, 70), "mom2": (217, 285, 40), "logo": (158, 150, 24)}
+MOUTH = {"mom3": (190, 262, 38), "girl": (350, 380, 70), "mom2": (217, 285, 40), "logo": (158, 150, 24)}
 MOODS = [
-    (2.2, 6.9, {"mom2": "sad", "girl": "calm"}),
+    (2.2, 6.9, {"mom3": "sad", "girl": "calm"}),
     (6.9, 12.2, {"logo": "happy"}),
     (14.8, 17.0, {"logo": "happy"}),
     (17.0, 21.3, {"girl": "happy"}),
-    (21.3, 25.4, {"mom2": "sad", "girl": "calm"}),
-    (25.4, 28.2, {"mom2": "happy", "girl": "happy"}),
-    (28.2, 32.4, {"mom2": "happy", "girl": "happy"}),
+    (21.3, 25.4, {"mom3": "sad", "girl": "calm"}),
+    (25.4, 28.2, {"mom3": "happy", "girl": "happy"}),
+    (28.2, 32.4, {"mom3": "happy", "girl": "happy"}),
     (32.4, 36.6, {"girl": "happy"}),
-    (39.0, 40.3, {"mom2": "calm", "girl": "calm"}),
-    (40.3, 42.0, {"mom2": "happy", "girl": "happy"}),
+    (39.0, 40.3, {"mom3": "calm", "girl": "calm"}),
+    (40.3, 42.0, {"mom3": "happy", "girl": "happy"}),
 ]
 
 def puppet(who, t, s, talk=0.0, seed=0, nod=0.0, tilt=0.0, arm=0.0, jump=0.0, look=None, wave=0.0):
@@ -2944,7 +2947,7 @@ def letter_tile(ch, size=150, mode="warm"):
               "cream": ((252, 244, 228), (226, 210, 186))}[mode]
     im = grad_card(size, size, int(size * 0.24), c0, c1).copy()
     col = (90, 52, 38) if mode == "cream" else WHITE
-    ImageDraw.Draw(im).text((size / 2, size / 2 + 4), ch, font=dfont("Black", int(size * 0.6)), fill=col, anchor="mm")
+    ImageDraw.Draw(im).text((size / 2, size / 2 + 4), ch, font=dfont("Black", int(size * (0.6 if len(ch) == 1 else 0.46))), fill=col, anchor="mm")
     return with_shadow(im, 12, 12)
 
 @lru_cache(maxsize=4)
@@ -2999,8 +3002,8 @@ def age_ruler(c, x0, x1, y, p):
 # ---------- scenes ----------
 def cart_question(lt, t):
     c = scene("home")
-    m = puppet("mom2", t, 0.74, seed=1)
-    place(c, m, 240, 545)
+    m = puppet("mom3", t, 0.8, seed=1)
+    place(c, m, 235, 565)
     g = puppet("girl", t, 0.48, seed=3)
     place(c, g, 840, 620)
     # R and L swap places (she mixes them), then L gets "eaten"
@@ -3072,29 +3075,32 @@ def cart_sounds(lt, t):
 
 def cart_ok(lt, t):
     c = scene("home")
-    m = puppet("mom2", t, 0.74, seed=1, tilt=-3)
-    place(c, m, 240, 545)
+    m = puppet("mom3", t, 0.8, seed=1, tilt=-3)
+    place(c, m, 235, 565)
     g = puppet("girl", t, 0.48, seed=3)
-    place(c, g, 840, 620)
-    k = spring(lt - 0.3, w=10, z=0.6)
+    place(c, g, 860, 620)
     wob = clamp((lt - 3.3) / 0.3) * (1 - clamp((lt - 4.3) / 0.3))
-    for j, (ch, mode, y) in enumerate((("R", "warm", 660), ("L", "blue", 820))):
-        sh = wob * 9 * math.sin(lt * 38 + j)
+    tiles = (("Sh", "warm", 0.56, 480, 680), ("J", "warm", 0.86, 585, 680), ("Ch", "warm", 1.16, 690, 680),
+             ("R", "warm", 1.46, 530, 795), ("L", "blue", 2.54, 640, 795))
+    for j, (ch, mode, st, x, y) in enumerate(tiles):
+        if lt < st: continue
+        k = spring(lt - st, w=12, z=0.55)
+        sh = wob * 8 * math.sin(lt * 38 + j)
         rot = wob * 10 * math.sin(lt * 21 + j * 2)
-        float_card(c, letter_tile(ch, 120, mode), 560 + sh, y + 6 * math.sin(t * 1.5 + j), k, rot=rot)
+        float_card(c, letter_tile(ch, 100, mode), x + sh, y + 5 * math.sin(t * 1.5 + j), k, rot=rot)
     if lt > 4.3:
         kb = spring(lt - 4.3, w=12, z=0.45)
         g2 = glow(320, (120, 220, 140)); gg = g2.resize((max(1, int(280 * kb)),) * 2)
-        c.alpha_composite(gg, (int(650 - gg.width / 2), int(740 - gg.height / 2)))
-        float_card(c, check_badge(100), 650, 740, kb)
+        c.alpha_composite(gg, (int(745 - gg.width / 2), int(770 - gg.height / 2)))
+        float_card(c, check_badge(90), 745, 770, kb)
     return c
 
 def cart_tongue(lt, t):
     global MIRROR
     if MIRROR is None: MIRROR = mirror_img()
     c = scene("home")
-    m = puppet("mom2", t, 0.74, seed=2)
-    place(c, m, 225, 545)
+    m = puppet("mom3", t, 0.8, seed=2)
+    place(c, m, 220, 565)
     g = puppet("girl", t, 0.48, seed=3)
     place(c, g, 860, 620)
     k = spring(lt - 0.2, w=10, z=0.65)
@@ -3132,8 +3138,8 @@ def cart_music(lt, t):
 
 def cart_correct(lt, t):
     c = scene("home")
-    m = puppet("mom2", t, 0.74, seed=2, tilt=-4)
-    place(c, m, 225, 545)
+    m = puppet("mom3", t, 0.8, seed=2, tilt=-4)
+    place(c, m, 220, 565)
     g = puppet("girl", t, 0.48, seed=3)
     place(c, g, 860, 620)
     k1 = spring(lt - 0.2, w=11, z=0.6)

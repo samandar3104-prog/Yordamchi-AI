@@ -218,6 +218,37 @@
   "gain_db": -8
  },
  {
+  "t": 22.06,
+  "sfx": "ui_pop_1",
+  "gain_db": -18
+ },
+ {
+  "t": 22.36,
+  "sfx": "ui_pop_1",
+  "gain_db": -18
+ },
+ {
+  "t": 22.66,
+  "sfx": "ui_pop_1",
+  "gain_db": -18
+ },
+ {
+  "t": 22.76,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -8
+ },
+ {
+  "t": 22.96,
+  "sfx": "ui_pop_2",
+  "gain_db": -18
+ },
+ {
+  "t": 24.04,
+  "sfx": "ui_pop_2",
+  "gain_db": -18
+ },
+ {
   "t": 24.65,
   "sfx": "digital_glitch",
   "gain_db": -20

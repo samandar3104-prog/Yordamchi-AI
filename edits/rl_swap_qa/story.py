@@ -23,7 +23,7 @@ CAPTIONS = [
     ([("«L» tovushi besh yoshgacha", "thin", 9.86), ("hosil bo'ladi", "bold", 10.98)], 12.10),
     ([("«R» va «L»ni almashtirish ham", "thin", 12.22), ("bu yoshda norma", "bold", 15.46)], 17.08),
     ([("barcha tovushlar joy-joyida", "thin", 19.06), ("aytilishi kerak", "bold", 20.12)], 21.40),
-    ([("Shu yoshgacha «R» va «L»ni", "thin", 21.50), ("buzib aytsa bo'ladi", "bold", 24.80)], 27.60),
+    ([("Faqat «Sh», «J», «Ch»,", "thin", 21.50), ("«R» va «L»ni", "thin", 22.76), ("buzib aytsa bo'ladi", "bold", 24.80)], 27.60),
     ([("Uyda qilsa bo'ladi:", "thin", 28.28), ("til bilan", "thin", 30.48), ("har xil mashqlar", "bold", 30.94)], 32.36),
     ([("Musiqa orqali", "thin", 32.52), ("ritmik mashqlar", "bold", 33.66), ("ham qilish mumkin", "thin", 35.00)], 36.52),
     ([("Uyda qizalog'ingiz nutqini", "thin", 36.62), ("nazorat qiling", "bold", 38.62)], 39.60),
