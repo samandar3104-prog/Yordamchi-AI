@@ -282,14 +282,14 @@ def cart_correct(lt, t):
     g = puppet("girl", t, 0.48, seed=3)
     place(c, g, 860, 620)
     k1 = spring(lt - 0.2, w=11, z=0.6)
-    wrong = lt < 1.38
-    sh = 6 * math.sin(lt * 40) if 0.4 < lt < 1.2 else 0
-    float_card(c, bubble_img("L", "gray" if wrong else "blue", True), 660 + sh, 640, k1 * (1 - 0.25 * clamp((lt - 1.38) / 0.3)))
-    if lt > 1.38:
-        k2 = spring(lt - 1.38, w=11, z=0.55)
+    wrong = lt < 0.78
+    sh = 6 * math.sin(lt * 40) if 0.25 < lt < 0.7 else 0
+    float_card(c, bubble_img("L", "gray" if wrong else "blue", True), 660 + sh, 640, k1 * (1 - 0.25 * clamp((lt - 0.78) / 0.3)))
+    if lt > 0.78:
+        k2 = spring(lt - 0.78, w=11, z=0.55)
         float_card(c, bubble_img("L", "green"), 450, 700, k2)
-    if lt > 1.9:
-        kb = spring(lt - 1.9, w=12, z=0.45)
+    if lt > 1.3:
+        kb = spring(lt - 1.3, w=12, z=0.45)
         float_card(c, check_badge(84), 545, 620, kb)
     return c
 

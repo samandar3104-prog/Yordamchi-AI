@@ -17,6 +17,12 @@
   "gain_db": -12
  },
  {
+  "t": 2.24,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -8
+ },
+ {
   "t": 2.55,
   "sfx": "glass_shine",
   "gain_db": -16
@@ -128,20 +134,26 @@
   "gain_db": -8
  },
  {
+  "t": 13.879999999999999,
+  "sfx": "button_2",
+  "gain_db": -14
+ },
+ {
   "t": 14.82,
   "sfx": "deep_whoosh",
   "align": "hit",
   "gain_db": -12
  },
  {
+  "t": 14.88,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -8
+ },
+ {
   "t": 15.25,
   "sfx": "ui_swipe",
   "gain_db": -16
- },
- {
-  "t": 15.48,
-  "sfx": "button_2",
-  "gain_db": -14
  },
  {
   "t": 15.5,
@@ -151,6 +163,11 @@
  {
   "t": 15.55,
   "sfx": "ui_chime",
+  "gain_db": -14
+ },
+ {
+  "t": 16.16,
+  "sfx": "ui_pop_1",
   "gain_db": -14
  },
  {
@@ -197,7 +214,7 @@
  },
  {
   "t": 20.14,
-  "sfx": "ui_pop_1",
+  "sfx": "ui_pop_2",
   "gain_db": -14
  },
  {
@@ -255,7 +272,7 @@
  },
  {
   "t": 24.82,
-  "sfx": "ui_pop_2",
+  "sfx": "button_2",
   "gain_db": -14
  },
  {
@@ -298,7 +315,7 @@
  },
  {
   "t": 30.96,
-  "sfx": "button_2",
+  "sfx": "ui_pop_1",
   "gain_db": -14
  },
  {
@@ -330,7 +347,7 @@
  },
  {
   "t": 33.68,
-  "sfx": "ui_pop_1",
+  "sfx": "ui_pop_2",
   "gain_db": -14
  },
  {
@@ -378,24 +395,14 @@
  },
  {
   "t": 38.64,
-  "sfx": "ui_pop_2",
+  "sfx": "button_2",
   "gain_db": -14
  },
  {
-  "t": 39.02,
+  "t": 39.620000000000005,
   "sfx": "deep_whoosh",
   "align": "hit",
   "gain_db": -12
- },
- {
-  "t": 39.25,
-  "sfx": "ui_pop_1",
-  "gain_db": -14
- },
- {
-  "t": 39.5,
-  "sfx": "digital_blip",
-  "gain_db": -16
  },
  {
   "t": 39.66,
@@ -404,13 +411,23 @@
   "gain_db": -8
  },
  {
+  "t": 39.8,
+  "sfx": "ui_pop_1",
+  "gain_db": -14
+ },
+ {
+  "t": 39.95,
+  "sfx": "digital_blip",
+  "gain_db": -16
+ },
+ {
   "t": 40.4,
   "sfx": "ui_chime",
   "gain_db": -14
  },
  {
   "t": 40.400000000000006,
-  "sfx": "button_2",
+  "sfx": "ui_pop_1",
   "gain_db": -14
  },
  {
@@ -438,7 +455,7 @@
  },
  {
   "t": 44.440000000000005,
-  "sfx": "ui_pop_1",
+  "sfx": "ui_pop_2",
   "gain_db": -14
  },
  {
@@ -452,20 +469,20 @@
   "gain_db": -14
  },
  {
-  "t": 45.48,
-  "sfx": "soft_swoosh",
-  "align": "start",
-  "gain_db": -8
- },
- {
   "t": 45.52,
   "sfx": "inertia_ramp",
   "align": "start",
   "gain_db": -12
  },
  {
+  "t": 45.56,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -8
+ },
+ {
   "t": 46.92,
-  "sfx": "ui_pop_2",
+  "sfx": "button_2",
   "gain_db": -14
  },
  {
