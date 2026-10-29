@@ -1,7 +1,6 @@
 # "R" and "L" swapped at 2 y.o. — shared timeline for render + SFX cues
 SEG = [
-    (0.00, 2.20, "full", None, 1.10),
-    (2.20, 6.90, "split", "question", 1.00),
+    (0.00, 6.90, "split", "question", 1.00),
     (6.90, 12.20, "split", "normal", 1.12),
     (12.20, 14.80, "full", None, 1.00),
     (14.80, 17.00, "split", "same", 1.14),
@@ -17,15 +16,16 @@ SEG = [
 TAP_T = 44.75
 
 CAPTIONS = [
-    ([("Qizim «R» va «L»", "thin", 0.05)], 1.86),
-    ([("tovushlarini", "thin", 2.24), ("almashtirib gapiradi", "bold", 2.88)], 3.96),
+    ([("Qizim 2 yosh 8 oylik,", "thin", 0.05), ("«R» va «L»ni", "thin", 1.56), ("almashtirib gapiradi", "bold", 2.88)], 3.96),
     ([("«L»ni yeb yuboradi,", "thin", 4.00), ("nima qilsam bo'ladi?", "bold", 5.58)], 6.88),
     ([("«L»ni yeb yuborishi", "thin", 7.30), ("mutlaqo norma", "bold", 8.78)], 9.80),
     ([("«L» tovushi besh yoshgacha", "thin", 9.86), ("hosil bo'ladi", "bold", 10.98)], 11.86),
     ([("«R» va «L»ni almashtirib", "thin", 12.22), ("talaffuz qilish ham", "bold", 13.86)], 14.46),
-    ([("bu yoshdagi qizaloqlar uchun", "thin", 14.88), ("norma", "bold", 16.14)], 17.08),
-    ([("barcha tovushlar joy-joyida", "thin", 19.06), ("aytilishi kerak", "bold", 20.12)], 21.40),
-    ([("Faqat «Sh», «J», «Ch»,", "thin", 21.50), ("«R» va «L»ni", "thin", 22.76), ("buzib aytsa bo'ladi", "bold", 24.80)], 27.60),
+    ([("2 yosh 8 oylik qizaloq uchun", "thin", 14.88), ("norma", "bold", 16.14)], 17.08),
+    ([("Faqat 3 yoshgacha,", "thin", 17.18)], 17.86),
+    ([("3 yoshdan keyin barcha tovushlar", "thin", 18.20), ("joy-joyida aytilishi kerak", "bold", 20.12)], 21.20),
+    ([("Faqat «Sh», «J», «Ch»,", "thin", 21.50), ("«R» va «L»ni", "thin", 22.76)], 24.50),
+    ([("buzib aytsa bo'ladi", "bold", 24.86), ("3 yoshda", "thin", 26.68)], 27.60),
     ([("Uyda qilsa bo'ladi:", "thin", 28.28), ("til bilan", "thin", 30.48), ("har xil mashqlar", "bold", 30.94)], 32.36),
     ([("Musiqa orqali", "thin", 32.52), ("ritmik mashqlar", "bold", 33.66), ("ham qilish mumkin", "thin", 35.00)], 36.26),
     ([("Uyda qizalog'ingiz nutqini", "thin", 36.62), ("nazorat qiling", "bold", 38.62)], 39.26),

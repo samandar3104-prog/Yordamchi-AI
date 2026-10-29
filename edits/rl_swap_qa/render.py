@@ -2876,7 +2876,7 @@ LIMBS = {
 }
 MOUTH = {"mom3": (190, 262, 38), "girl": (350, 380, 70), "mom2": (217, 285, 40), "logo": (158, 150, 24)}
 MOODS = [
-    (2.2, 6.9, {"mom3": "sad", "girl": "calm"}),
+    (0.0, 6.9, {"mom3": "sad", "girl": "calm"}),
     (6.9, 12.2, {"logo": "happy"}),
     (14.8, 17.0, {"logo": "happy"}),
     (17.0, 21.3, {"girl": "happy"}),
@@ -2999,6 +2999,14 @@ def age_ruler(c, x0, x1, y, p):
         d.text((x, y + 52), str(yr), font=f, fill=WHITE if on else (170, 140, 126), anchor="mm")
     d.text((x1 + 18, y + 52), "yosh", font=dfont("Light", 34), fill=(220, 200, 186), anchor="lm") if x1 + 120 < W else None
 
+@lru_cache(maxsize=8)
+def age_chip(text):
+    f = dfont("Black", 44)
+    w_ = int(f.getlength(text)) + 64; h_ = 78
+    im = grad_card(w_, h_, 39, (255, 214, 120), (232, 150, 60)).copy()
+    ImageDraw.Draw(im).text((w_ / 2, h_ / 2 + 2), text, font=f, fill=(70, 34, 20), anchor="mm")
+    return with_shadow(im, 10, 10)
+
 # ---------- scenes ----------
 def cart_question(lt, t):
     c = scene("home")
@@ -3007,17 +3015,19 @@ def cart_question(lt, t):
     g = puppet("girl", t, 0.48, seed=3)
     place(c, g, 840, 620)
     # R and L swap places (she mixes them), then L gets "eaten"
-    k = spring(lt - 0.3, w=10, z=0.6)
-    sw = ease_io(((lt - 0.9) % 1.4) / 0.7) if lt > 0.9 else 0
-    flip = int(max(0, lt - 0.9) // 1.4) % 2 == 1
+    k = spring(lt - 0.4, w=10, z=0.6)
+    sw = ease_io(((lt - 3.1) % 1.4) / 0.7) if lt > 3.1 else 0
+    flip = int(max(0, lt - 3.1) // 1.4) % 2 == 1
     u = 1 - sw if flip else sw
     pr = (lerp(470, 640, u), 700 - 60 * math.sin(math.pi * u))
     pl = (lerp(640, 470, u), 700 + 60 * math.sin(math.pi * u))
-    eat = clamp((lt - 1.95) / 0.6)
+    eat = clamp((lt - 4.15) / 0.6)
     float_card(c, letter_tile("R", 140, "warm"), pr[0], pr[1], k)
     float_card(c, letter_tile("L", 140, "gray" if eat > 0.3 else "blue"), pl[0], pl[1], k * (1 - 0.45 * eat), a=1 - 0.6 * eat)
-    if lt > 3.3:
-        kk = spring(lt - 3.3, w=11, z=0.55)
+    if lt > 0.44:
+        float_card(c, age_chip("2 yosh 8 oy"), 555, 890, spring(lt - 0.44, w=12, z=0.5) * (1 - clamp((lt - 2.6) / 0.3)))
+    if lt > 5.5:
+        kk = spring(lt - 5.5, w=11, z=0.55)
         float_card(c, icon_card("q", 130), 430, 610 + 8 * math.sin(t * 2), kk, rot=8 * math.sin(t * 1.3))
     return c
 
@@ -3044,6 +3054,8 @@ def cart_same(lt, t):
     u = ease_io(clamp((lt - 0.4) / 0.8))
     float_card(c, letter_tile("R", 140, "warm"), lerp(560, 840, u), 720 - 70 * math.sin(math.pi * u), k)
     float_card(c, letter_tile("L", 140, "blue"), lerp(840, 560, u), 720 + 70 * math.sin(math.pi * u), k)
+    if lt > 0.08:
+        float_card(c, age_chip("2 yosh 8 oy"), 700, 880, spring(lt - 0.08, w=12, z=0.5))
     if lt > 0.66:
         kb = spring(lt - 0.66, w=12, z=0.45)
         g = glow(320, (120, 220, 140)); gg = g.resize((max(1, int(260 * kb)),) * 2)
@@ -3055,6 +3067,9 @@ def cart_sounds(lt, t):
     c = scene("home")
     g = puppet("girl", t, 0.5, seed=3)
     place(c, g, 830, 600)
+    if lt > 0.18:
+        ka = spring(lt - 0.18, w=12, z=0.5)
+        float_card(c, age_chip("3 yosh" if lt < 1.2 else "3 yoshdan keyin"), 330, 625, ka)
     letters = "ABLRS"
     rng = np.random.default_rng(4)
     placed = lt > 3.1
@@ -3088,6 +3103,8 @@ def cart_ok(lt, t):
         sh = wob * 8 * math.sin(lt * 38 + j)
         rot = wob * 10 * math.sin(lt * 21 + j * 2)
         float_card(c, letter_tile(ch, 100, mode), x + sh, y + 5 * math.sin(t * 1.5 + j), k, rot=rot)
+    if lt > 5.38:
+        float_card(c, age_chip("3 yosh"), 585, 895, spring(lt - 5.38, w=12, z=0.5))
     if lt > 4.3:
         kb = spring(lt - 4.3, w=12, z=0.45)
         g2 = glow(320, (120, 220, 140)); gg = g2.resize((max(1, int(280 * kb)),) * 2)

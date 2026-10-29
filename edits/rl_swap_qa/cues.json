@@ -11,26 +11,20 @@
   "gain_db": -8
  },
  {
-  "t": 2.22,
-  "sfx": "deep_whoosh",
-  "align": "hit",
-  "gain_db": -12
+  "t": 0.45,
+  "sfx": "ui_pop_2",
+  "gain_db": -16
  },
  {
-  "t": 2.24,
-  "sfx": "soft_swoosh",
-  "align": "start",
-  "gain_db": -8
- },
- {
-  "t": 2.55,
+  "t": 0.5,
   "sfx": "glass_shine",
   "gain_db": -16
  },
  {
-  "t": 2.9,
-  "sfx": "cine_strike",
-  "gain_db": -16
+  "t": 1.56,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -8
  },
  {
   "t": 2.9,
@@ -75,7 +69,7 @@
  },
  {
   "t": 6.92,
-  "sfx": "ui_swipe",
+  "sfx": "deep_whoosh",
   "align": "hit",
   "gain_db": -12
  },
@@ -123,8 +117,8 @@
  },
  {
   "t": 12.219999999999999,
-  "sfx": "inertia_ramp",
-  "align": "start",
+  "sfx": "ui_swipe",
+  "align": "hit",
   "gain_db": -12
  },
  {
@@ -140,8 +134,8 @@
  },
  {
   "t": 14.82,
-  "sfx": "deep_whoosh",
-  "align": "hit",
+  "sfx": "inertia_ramp",
+  "align": "start",
   "gain_db": -12
  },
  {
@@ -149,6 +143,11 @@
   "sfx": "soft_swoosh",
   "align": "start",
   "gain_db": -8
+ },
+ {
+  "t": 14.92,
+  "sfx": "ui_pop_2",
+  "gain_db": -16
  },
  {
   "t": 15.25,
@@ -172,14 +171,31 @@
  },
  {
   "t": 17.02,
-  "sfx": "ui_swipe",
+  "sfx": "deep_whoosh",
   "align": "hit",
   "gain_db": -12
+ },
+ {
+  "t": 17.18,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -8
+ },
+ {
+  "t": 17.22,
+  "sfx": "ui_pop_2",
+  "gain_db": -16
  },
  {
   "t": 18.0,
   "sfx": "button_3",
   "gain_db": -16
+ },
+ {
+  "t": 18.2,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -8
  },
  {
   "t": 18.42,
@@ -190,12 +206,6 @@
   "t": 18.84,
   "sfx": "button_3",
   "gain_db": -16
- },
- {
-  "t": 19.06,
-  "sfx": "soft_swoosh",
-  "align": "start",
-  "gain_db": -8
  },
  {
   "t": 19.26,
@@ -224,8 +234,8 @@
  },
  {
   "t": 21.32,
-  "sfx": "inertia_ramp",
-  "align": "start",
+  "sfx": "ui_swipe",
+  "align": "hit",
   "gain_db": -12
  },
  {
@@ -271,7 +281,7 @@
   "gain_db": -20
  },
  {
-  "t": 24.82,
+  "t": 24.88,
   "sfx": "button_2",
   "gain_db": -14
  },
@@ -286,9 +296,20 @@
   "gain_db": -14
  },
  {
+  "t": 26.68,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -8
+ },
+ {
+  "t": 26.72,
+  "sfx": "ui_pop_2",
+  "gain_db": -16
+ },
+ {
   "t": 28.22,
-  "sfx": "deep_whoosh",
-  "align": "hit",
+  "sfx": "inertia_ramp",
+  "align": "start",
   "gain_db": -12
  },
  {
@@ -320,7 +341,7 @@
  },
  {
   "t": 32.42,
-  "sfx": "ui_swipe",
+  "sfx": "deep_whoosh",
   "align": "hit",
   "gain_db": -12
  },
@@ -389,8 +410,8 @@
  },
  {
   "t": 36.620000000000005,
-  "sfx": "inertia_ramp",
-  "align": "start",
+  "sfx": "ui_swipe",
+  "align": "hit",
   "gain_db": -12
  },
  {
@@ -400,8 +421,8 @@
  },
  {
   "t": 39.620000000000005,
-  "sfx": "deep_whoosh",
-  "align": "hit",
+  "sfx": "inertia_ramp",
+  "align": "start",
   "gain_db": -12
  },
  {
@@ -437,7 +458,7 @@
  },
  {
   "t": 42.02,
-  "sfx": "ui_swipe",
+  "sfx": "deep_whoosh",
   "align": "hit",
   "gain_db": -12
  },
@@ -470,8 +491,8 @@
  },
  {
   "t": 45.52,
-  "sfx": "inertia_ramp",
-  "align": "start",
+  "sfx": "ui_swipe",
+  "align": "hit",
   "gain_db": -12
  },
  {
