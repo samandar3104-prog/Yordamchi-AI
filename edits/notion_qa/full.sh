@@ -20,13 +20,13 @@ ev = [(0.08, "ui_pop_2", -14), (2.92, "button_2", -16), (3.9, "button_2", -16), 
       (5.78, "ui_chime", -16), (6.95, "cine_strike", -16), (7.05, "sparkle", -12),
       (8.5, "click_ticks", -20), (9.72, "ui_swipe", -18), (10.56, "ui_pop_1", -20), (10.76, "ui_pop_1", -20), (10.96, "ui_pop_1", -20),
       (16.0, "button_3", -20), (16.5, "ui_pop_2", -18), (16.65, "ui_pop_2", -18), (16.8, "ui_pop_2", -18), (17.36, "glass_shine", -16), (18.4, "soft_swoosh", -10),
-      (20.22, "sparkle", -14), (22.66, "combo", -12),
+      (20.6, "soft_swoosh", -10), (21.24, "ui_pop_2", -16), (21.82, "ui_notify", -18), (22.66, "combo", -12),
       (28.7, "gear_click", -18), (31.66, "digital_blip", -14),
       (32.45, "ui_pop_2", -16), (35.0, "impact_boom", -18), (35.02, "sparkle", -12), (35.1, "ui_chime", -14), (35.68, "button_2", -18),
-      (38.7, "typing", -18), (39.75, "ui_click", -14), (39.9, "ui_notify", -14), (40.0, "ui_chime", -18)]
+      (38.85, "ui_click", -14), (39.4, "ui_swipe", -16), (39.66, "ui_notify", -14), (39.76, "ui_chime", -18)]
 for j in range(6): ev.append((0.3 + j * 0.13, "ui_pop_1", -22))
 for j in range(6): ev.append((3.0 + j * 0.28, "soft_swoosh", -16))
-for j in range(5): ev.append((21.3 + j * 0.16, "ui_pop_1", -18))
+for j in range(5): ev.append((23.05 + j * 0.12, "ui_pop_1", -18))
 for j in range(3): ev.append((37.66 + j * 0.15, "ui_pop_1", -20))
 for tt, s, g in ev: c.append({"t": tt, "sfx": s, "gain_db": g})
 c.sort(key=lambda x: x["t"])
@@ -45,9 +45,9 @@ ffmpeg -i final.mp4 -af ebur128 -f null - 2>&1 | grep -E "^\s+I:" | tail -1
 ffmpeg -v error -y -i final.mp4 -vf "fps=0.8,scale=150:-1,tile=9x4" -frames:v 1 gfinal.png
 R=/home/user/Yordamchi-AI
 mkdir -p $R/edits/notion_qa/av $R/output
-cp final.mp4 $R/output/notion_shablon_reel_9x16.mp4
-cp render.py v10_notion.py story.py cues.json build.sh full.sh $R/edits/notion_qa/ && cp -r av/fl $R/edits/notion_qa/av/
-cd $R && git add edits && git commit -qm "Notion template reel: Fluent 3D objects (MIT), app/UI mocks, background music from 0:50, SFX cues
+cp final.mp4 $R/output/notion_shablon_reel_v2_9x16.mp4
+cp render.py v10_notion.py v11_glass.py story.py cues.json build.sh full.sh $R/edits/notion_qa/ && cp -r av/svg $R/edits/notion_qa/av/
+cd $R && git add edits && git commit -qm "Notion reel v2: frosted-glass icons and brand logos, mesh background, new captions, body framing, receiver scene, comment 8
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01UonvvDdpC4BVYpgLmBEMkX" && git push -q origin claude/brave-euler-2p9lcf 2>&1 | tail -1
