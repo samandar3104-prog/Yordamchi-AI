@@ -28,9 +28,9 @@ def expert_crop(src, w, h, z=1.0, face_at=0.40, dx=0.0):
     """50/50: head + shoulders + chest (source padded with its own wall); full screen: the whole frame. Continuous in between."""
     im, P_ = _padded(src)
     f = clamp((h - HALF) / (H - HALF))
-    ch = lerp(520.0, float(SH), f)
+    ch = lerp(520.0, float(SH) - 120.0, f)
     cw = ch * w / h
-    top = lerp(96.0, 0.0, f)
+    top = lerp(96.0, 120.0, f)
     top = clamp(top, 0, SH - ch)
     cx = P_ + SW / 2
     return im.resize((int(w), int(h)), Image.BICUBIC, box=(cx - cw / 2, top, cx + cw / 2, top + ch)).convert("RGBA")
@@ -570,7 +570,7 @@ def cart_comment(lt, t):
     d.ellipse((20, 20, 96, 96), fill=(255, 255, 255, 40)); bar.alpha_composite(svg_icon("user", 48, "#ffffff", 1.8), (34, 34))
     typed = lt > 0.45
     if typed:
-        d.text((122, 58), "8", font=dfont("Black", 56), fill=WHITE, anchor="lm")
+        d.text((122, 60), "8", font=dfont("Black", 84), fill=(253, 230, 138), anchor="lm")
     elif int(lt * 3) % 2 == 0:
         d.line([(124, 34), (124, 82)], fill=WHITE, width=3)
     else:
@@ -580,6 +580,12 @@ def cart_comment(lt, t):
     glass(c, 540, 640 - 30 * ease_out(sent) + (1 - k) * 60, 840, 116, tint=(255, 255, 255), k=k, r=58, alpha=(0.22, 0.12), content=bar,
           glow_col=(56, 132, 255), shine=(lt - 0.6) / 0.6)
     gicon(c, "message-circle", 930, 560, 96, "blue", 0.1, lt, w=12, z=0.5)
+    if 0.45 < lt < 1.3:
+        u = lt - 0.45
+        lay = Image.new("RGBA", (200, 200), (0, 0, 0, 0))
+        ImageDraw.Draw(lay).text((100, 108), "8", font=dfont("Black", 160), fill=WHITE, anchor="mm")
+        glass(c, 540, 820, 200, 200, tint=TINTS["gold"], k=spring(u, w=11, z=0.45) * (1 - ease_in(clamp((lt - 1.05) / 0.25))), r=50,
+              alpha=(0.62, 0.42), content=lay, glow_col=TINTS["gold"], shine=(u - 0.2) / 0.5)
     if lt > 1.25:
         u = spring(lt - 1.25, w=11, z=0.6)
         card = Image.new("RGBA", (720, 140), (0, 0, 0, 0)); cd = ImageDraw.Draw(card)
@@ -593,3 +599,36 @@ def cart_comment(lt, t):
 
 PANELS.update({"apps": cart_apps, "reveal": cart_reveal, "arch": cart_arch, "order": cart_order, "pro": cart_pro,
                "confused": cart_confused, "gift": cart_gift, "comment": cart_comment})
+
+
+# ---------- caption placement: in full screen always on the chest (never over the face) ----------
+STY["big"] = (lambda: dfont("Black", 150), 190)
+FULL_TOP = 1270
+def draw_captions(canvas, t):
+    for lines, t_out in story.CAPTIONS:
+        if t < lines[0][2] or t > t_out + 0.32: continue
+        out = ease_in((t - t_out) / 0.3) if t > t_out else 0.0
+        full = SEG[seg_at(lines[0][2])][2] == "full"
+        y = FULL_TOP if full else CAP_Y
+        for txt, style, t_in in lines:
+            if style == "big": big_badge(canvas, txt, y, t_in, t, out)
+            else: anim_line(canvas, txt, style, CAP_X, y, t_in, t, out, center=full)
+            y += STY[style][1]
+
+def big_badge(canvas, txt, y, t0, t, out):
+    """Large gold glass tile with the number — the key action of the CTA."""
+    u = t - t0
+    if u <= 0: return
+    k = spring(u, w=11, z=0.45)
+    pulse = 1 + 0.05 * math.sin(u * 7) * clamp((u - 0.5) / 0.3)
+    lay = Image.new("RGBA", (180, 180), (0, 0, 0, 0))
+    ImageDraw.Draw(lay).text((90, 96), txt, font=dfont("Black", 140), fill=WHITE, anchor="mm")
+    for j in range(2):
+        q = (u - 0.2 - j * 0.35) % 1.2
+        if u > 0.2:
+            rr = int(95 + 90 * q)
+            ring = Image.new("RGBA", (rr * 2, rr * 2), (0, 0, 0, 0))
+            ImageDraw.Draw(ring).rounded_rectangle((3, 3, rr * 2 - 3, rr * 2 - 3), int(rr * 0.4), outline=(250, 204, 21, int(170 * (1 - q / 1.2))), width=4)
+            paste_alpha(canvas, ring, W / 2 - rr, y + 85 - rr - 24 * out, 1 - out)
+    glass(canvas, W / 2, y + 85 - 24 * out, 180, 180, tint=TINTS["gold"], k=k * pulse, r=44, a=(1 - out) * clamp(u / 0.15),
+          alpha=(0.62, 0.42), content=lay, glow_col=TINTS["gold"], shine=(u - 0.3) / 0.6)

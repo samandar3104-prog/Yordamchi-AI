@@ -26,5 +26,6 @@ CAPTIONS = [
     ([("to'g'ri shablon tuzishni", "thin", 28.56), ("bilishmaydi", "bold", 31.66)], 32.30),
     ([("O'zim foydalanadigan", "thin", 32.42), ("kontent plan shablonimni", "thin", 33.58), ("tekinga beraman", "bold", 35.00)], 35.62),
     ([("Ichida ekspert videolari uchun", "thin", 35.68), ("rubrikalar bor", "bold", 37.66)], 39.10),
-    ([("Kommentariyada «8» raqamini", "thin", 40.92), ("qoldirsangiz,", "thin", 41.88), ("linkini yuboraman", "bold", 42.50)], 99),
+    ([("Kommentariyada", "thin", 40.92), ("8", "big", 41.20), ("raqamini qoldirsangiz,", "thin", 41.44)], 42.36),
+    ([("linkini yuboraman", "bold", 42.50)], 99),
 ]

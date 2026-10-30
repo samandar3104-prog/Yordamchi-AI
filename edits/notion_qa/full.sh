@@ -23,12 +23,13 @@ ev = [(0.08, "ui_pop_2", -14), (2.92, "button_2", -16), (3.9, "button_2", -16), 
       (20.6, "soft_swoosh", -10), (21.24, "ui_pop_2", -16), (21.82, "ui_notify", -18), (22.66, "combo", -12),
       (28.7, "gear_click", -18), (31.66, "digital_blip", -14),
       (32.45, "ui_pop_2", -16), (35.0, "impact_boom", -18), (35.02, "sparkle", -12), (35.1, "ui_chime", -14), (35.68, "button_2", -18),
-      (38.85, "ui_click", -14), (39.4, "ui_swipe", -16), (39.66, "ui_notify", -14), (39.76, "ui_chime", -18)]
+      (38.85, "ui_click", -14), (39.4, "ui_swipe", -16), (39.66, "ui_notify", -14), (41.22, "combo", -12), (38.86, "ui_pop_2", -14), (39.76, "ui_chime", -18)]
 for j in range(6): ev.append((0.3 + j * 0.13, "ui_pop_1", -22))
 for j in range(6): ev.append((3.0 + j * 0.28, "soft_swoosh", -16))
 for j in range(5): ev.append((23.05 + j * 0.12, "ui_pop_1", -18))
 for j in range(3): ev.append((37.66 + j * 0.15, "ui_pop_1", -20))
 for tt, s, g in ev: c.append({"t": tt, "sfx": s, "gain_db": g})
+for x in c: x["gain_db"] -= 4   # all SFX a bit quieter
 c.sort(key=lambda x: x["t"])
 json.dump(c, open('cues.json', 'w'), indent=1)
 print(len(c), "cues")
@@ -36,7 +37,7 @@ P
 D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 src.mov)
 ffmpeg -v error -y -i src.mov -vn -af "highpass=f=80,loudnorm=I=-15:TP=-1.5:LRA=9" -ar 48000 -ac 2 voice.wav
 # background music: from 0:50 of the track, ~17 dB under the voice, gentle fades
-ffmpeg -v error -y -ss 50 -t $D -i music.mp3 -af "loudnorm=I=-32:TP=-8:LRA=11,afade=t=in:d=0.8,afade=t=out:st=$(python3 -c "print($D-2.2)"):d=2.2" -ar 48000 -ac 2 bgm.wav
+ffmpeg -v error -y -ss 50 -t $D -i music.mp3 -af "loudnorm=I=-36:TP=-12:LRA=11,afade=t=in:d=0.8,afade=t=out:st=$(python3 -c "print($D-2.2)"):d=2.2" -ar 48000 -ac 2 bgm.wav
 ffmpeg -v error -y -i voice.wav -i bgm.wav -filter_complex "[0:a][1:a]amix=inputs=2:duration=first:normalize=0[a]" -map "[a]" -ar 48000 -ac 2 mix.wav
 ffmpeg -v error -y -f concat -i rl.txt -i mix.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest -movflags +faststart base.mp4
 python3 /home/user/Yordamchi-AI/sfx/apply_sfx.py base.mp4 cues.json final.mp4 2>&1 | tail -1
@@ -45,9 +46,9 @@ ffmpeg -i final.mp4 -af ebur128 -f null - 2>&1 | grep -E "^\s+I:" | tail -1
 ffmpeg -v error -y -i final.mp4 -vf "fps=0.8,scale=150:-1,tile=9x4" -frames:v 1 gfinal.png
 R=/home/user/Yordamchi-AI
 mkdir -p $R/edits/notion_qa/av $R/output
-cp final.mp4 $R/output/notion_shablon_reel_v2_9x16.mp4
+cp final.mp4 $R/output/notion_shablon_reel_v3_9x16.mp4
 cp render.py v10_notion.py v11_glass.py story.py cues.json build.sh full.sh $R/edits/notion_qa/ && cp -r av/svg $R/edits/notion_qa/av/
-cd $R && git add edits && git commit -qm "Notion reel v2: frosted-glass icons and brand logos, mesh background, new captions, body framing, receiver scene, comment 8
+cd $R && git add edits && git commit -qm "Notion reel v3: subtitles on the chest (off the face), big gold 8 CTA, quieter music and SFX
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01UonvvDdpC4BVYpgLmBEMkX" && git push -q origin claude/brave-euler-2p9lcf 2>&1 | tail -1
