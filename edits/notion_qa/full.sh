@@ -37,7 +37,7 @@ P
 D=$(ffprobe -v error -show_entries format=duration -of csv=p=0 src.mov)
 ffmpeg -v error -y -i src.mov -vn -af "highpass=f=80,loudnorm=I=-15:TP=-1.5:LRA=9" -ar 48000 -ac 2 voice.wav
 # background music: from 0:50 of the track, ~17 dB under the voice, gentle fades
-ffmpeg -v error -y -ss 50 -t $D -i music.mp3 -af "loudnorm=I=-36:TP=-12:LRA=11,afade=t=in:d=0.8,afade=t=out:st=$(python3 -c "print($D-2.2)"):d=2.2" -ar 48000 -ac 2 bgm.wav
+ffmpeg -v error -y -ss 50 -t $D -i music.mp3 -af "loudnorm=I=-36:TP=-9:LRA=11,afade=t=in:d=0.8,afade=t=out:st=$(python3 -c "print($D-2.2)"):d=2.2" -ar 48000 -ac 2 bgm.wav
 ffmpeg -v error -y -i voice.wav -i bgm.wav -filter_complex "[0:a][1:a]amix=inputs=2:duration=first:normalize=0[a]" -map "[a]" -ar 48000 -ac 2 mix.wav
 ffmpeg -v error -y -f concat -i rl.txt -i mix.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest -movflags +faststart base.mp4
 python3 /home/user/Yordamchi-AI/sfx/apply_sfx.py base.mp4 cues.json final.mp4 2>&1 | tail -1
