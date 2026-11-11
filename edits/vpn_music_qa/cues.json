@@ -1,0 +1,147 @@
+[
+ {
+  "t": 0.02,
+  "sfx": "impact_boom",
+  "gain_db": -21
+ },
+ {
+  "t": 1.8800000000000001,
+  "sfx": "ui_pop_2",
+  "gain_db": -21
+ },
+ {
+  "t": 3.52,
+  "sfx": "ui_swipe",
+  "gain_db": -21
+ },
+ {
+  "t": 5.4399999999999995,
+  "sfx": "ui_swipe",
+  "gain_db": -21
+ },
+ {
+  "t": 7.539999999999999,
+  "sfx": "ui_pop_2",
+  "gain_db": -21
+ },
+ {
+  "t": 9.24,
+  "sfx": "ui_click",
+  "gain_db": -19
+ },
+ {
+  "t": 11.52,
+  "sfx": "ui_swipe",
+  "gain_db": -21
+ },
+ {
+  "t": 12.95,
+  "sfx": "ui_click",
+  "gain_db": -19
+ },
+ {
+  "t": 16.42,
+  "sfx": "ui_click",
+  "gain_db": -19
+ },
+ {
+  "t": 16.48,
+  "sfx": "ui_pop_2",
+  "gain_db": -21
+ },
+ {
+  "t": 17.42,
+  "sfx": "ui_chime",
+  "gain_db": -20
+ },
+ {
+  "t": 18.32,
+  "sfx": "ui_swipe",
+  "gain_db": -21
+ },
+ {
+  "t": 21.96,
+  "sfx": "ui_pop_2",
+  "gain_db": -21
+ },
+ {
+  "t": 23.12,
+  "sfx": "ui_swipe",
+  "gain_db": -21
+ },
+ {
+  "t": 28.0,
+  "sfx": "ui_click",
+  "gain_db": -19
+ },
+ {
+  "t": 28.919999999999998,
+  "sfx": "ui_swipe",
+  "gain_db": -21
+ },
+ {
+  "t": 30.84,
+  "sfx": "ui_click",
+  "gain_db": -19
+ },
+ {
+  "t": 30.86,
+  "sfx": "ui_pop_2",
+  "gain_db": -21
+ },
+ {
+  "t": 31.32,
+  "sfx": "ui_notify",
+  "gain_db": -20
+ },
+ {
+  "t": 32.82,
+  "sfx": "ui_swipe",
+  "gain_db": -21
+ },
+ {
+  "t": 37.4,
+  "sfx": "sparkle",
+  "gain_db": -21
+ },
+ {
+  "t": 38.220000000000006,
+  "sfx": "ui_swipe",
+  "gain_db": -21
+ },
+ {
+  "t": 39.45,
+  "sfx": "ui_click",
+  "gain_db": -19
+ },
+ {
+  "t": 41.620000000000005,
+  "sfx": "ui_pop_2",
+  "gain_db": -21
+ },
+ {
+  "t": 44.1,
+  "sfx": "ui_chime",
+  "gain_db": -20
+ },
+ {
+  "t": 45.82,
+  "sfx": "ui_swipe",
+  "gain_db": -21
+ },
+ {
+  "t": 47.02,
+  "sfx": "ui_pop_1",
+  "gain_db": -20
+ },
+ {
+  "t": 47.040000000000006,
+  "sfx": "ui_pop_2",
+  "gain_db": -21
+ },
+ {
+  "t": 49.04,
+  "sfx": "ui_pop_1",
+  "gain_db": -20
+ }
+]
