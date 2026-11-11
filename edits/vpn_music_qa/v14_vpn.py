@@ -52,7 +52,7 @@ def draw_expert2(c, src, L, z):
     if rad > 2:   # glass rim: gradient ring
         ring = Image.new("RGBA", (W_ + 16, H_ + 16), (0, 0, 0, 0))
         ImageDraw.Draw(ring).rounded_rectangle((3, 3, W_ + 12, H_ + 12), rad + 5, outline=(255, 255, 255, 190), width=5)
-        ig = ig_gradient(W_ + 16).copy(); ig.putalpha(ImageChops.multiply(ig.getchannel("A"), ring.getchannel("A")))
+        ig = ig_gradient(max(W_, H_) + 16).resize(ring.size); ig.putalpha(ImageChops.multiply(ig.getchannel("A"), ring.getchannel("A")))
         paste_alpha(c, ig, x - 8, y - 8, L["a"])
 
 # ---------- small UI helpers ----------
