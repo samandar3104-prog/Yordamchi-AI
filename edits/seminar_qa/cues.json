@@ -1,0 +1,66 @@
+[
+ {
+  "t": 0.02,
+  "sfx": "impact_boom",
+  "gain_db": -20
+ },
+ {
+  "t": 1.18,
+  "sfx": "ui_pop_2",
+  "gain_db": -19
+ },
+ {
+  "t": 3.4,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -14
+ },
+ {
+  "t": 8.02,
+  "sfx": "ui_pop_2",
+  "gain_db": -19
+ },
+ {
+  "t": 10.36,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -14
+ },
+ {
+  "t": 12.04,
+  "sfx": "ui_chime",
+  "gain_db": -19
+ },
+ {
+  "t": 16.38,
+  "sfx": "ui_pop_2",
+  "gain_db": -19
+ },
+ {
+  "t": 21.56,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -14
+ },
+ {
+  "t": 23.759999999999998,
+  "sfx": "ui_pop_2",
+  "gain_db": -19
+ },
+ {
+  "t": 27.419999999999998,
+  "sfx": "ui_pop_2",
+  "gain_db": -19
+ },
+ {
+  "t": 27.98,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -14
+ },
+ {
+  "t": 30.6,
+  "sfx": "ui_notify",
+  "gain_db": -18
+ }
+]
