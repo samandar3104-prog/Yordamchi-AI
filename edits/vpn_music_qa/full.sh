@@ -36,7 +36,7 @@ R=/home/user/Yordamchi-AI
 mkdir -p $R/edits/vpn_music_qa/av $R/output
 cp final.mp4 $R/output/instagram_musiqa_vpn_reel_9x16.mp4
 cp render.py v14_vpn.py story.py cues.json build.sh full.sh $R/edits/vpn_music_qa/ && cp av/app.jpg $R/edits/vpn_music_qa/av/ && cp -r av/svg $R/edits/vpn_music_qa/av/
-cd $R && git add edits && git commit -qm "Instagram music via VPN reel: full / 50-50 / round expert frames, phone UI scenes (store, VPN, music picker, publish, edit), sparse SFX
+cd $R && git add edits && git commit -qm "Instagram music via VPN reel: no seam line during 50-50 to round-frame transitions
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01UonvvDdpC4BVYpgLmBEMkX" && git push -q origin claude/brave-euler-2p9lcf 2>&1 | tail -1

@@ -4703,8 +4703,8 @@ def render(i, src):
     si = seg_at(t)
     z = full_zoom(t, 1.0) if SEG[si][3] == "full" else 1.0
     draw_expert2(c, src, L, z)
-    if SEG[si][3] == "split" or (since < 0.8 and SEG[si - 1][3] == "split"):
-        y = int(L["r"][1]) if SEG[si][3] == "split" else HALF
+    if SEG[si][3] == "split" and L["r"][1] > 40:
+        y = int(L["r"][1])
         sh = Image.new("RGBA", (W, 40), (0, 0, 0, 0))
         sh.putalpha(Image.fromarray(np.repeat((np.linspace(0, 1, 40) ** 2 * 110)[:, None], W, 1).astype(np.uint8)))
         c.alpha_composite(sh, (0, max(0, y - 40)))
