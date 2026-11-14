@@ -1,19 +1,18 @@
 # Logoped: why I chose children, and advice to young specialists — 3 parts joined (cuts at 29.93 and 50.67)
-SEG = [
-    (0.00, 2.80, "full", None, 1.04),
-    (2.80, 9.00, "split", "adults", 1.00),
-    (9.00, 11.40, "full", None, 1.08),
-    (11.40, 20.62, "split", "hard", 1.00),
-    (20.62, 24.22, "full", None, 1.04),
-    (24.22, 34.70, "split", "kids", 1.00),
-    (34.70, 36.40, "full", None, 1.08),
-    (36.40, 39.80, "split", "path", 1.00),
-    (39.80, 50.30, "split", "scatter", 1.00),
-    (50.30, 57.90, "split", "focus", 1.00),
-    (57.90, 60.60, "full", None, 1.06),
-    (60.60, 68.90, "split", "advice", 1.00),
-    (68.90, 74.20, "split", "follow", 1.00),
-    (74.20, 99.0, "full", None, 1.04),
+SEG = [   # every layout keeps captions centred low; index 3 = how the expert is shown over the B-roll
+    (0.00, 2.80, "full", "full", 1.00),
+    (2.80, 9.00, "full", "circle", 1.00),
+    (9.00, 11.40, "full", "full", 1.05),
+    (11.40, 20.62, "full", "vo", 1.00),
+    (20.62, 24.22, "full", "full", 1.00),
+    (24.22, 34.70, "full", "card", 1.00),
+    (34.70, 39.80, "full", "full", 1.05),
+    (39.80, 50.30, "full", "vo", 1.00),
+    (50.30, 57.90, "full", "circle", 1.00),
+    (57.90, 60.60, "full", "full", 1.00),
+    (60.60, 68.90, "full", "card", 1.00),
+    (68.90, 74.20, "full", "follow", 1.00),
+    (74.20, 99.0, "full", "full", 1.04),
 ]
 TAP_T = 73.40
 

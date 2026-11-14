@@ -18,15 +18,10 @@ for lines, t_out in story.CAPTIONS:
         if style == "bold": c.append({"t": tin + 0.02, "sfx": bold[nb % 3], "gain_db": -17}); nb += 1
         elif style == "serif": c.append({"t": tin, "sfx": "soft_swoosh", "align": "start", "gain_db": -13})
         elif style == "caps": c.append({"t": tin, "sfx": "typing", "gain_db": -21})
-ev = [(3.88, "glass_shine", -18), (5.02, "button_1", -18), (6.26, "button_3", -18), (7.18, "digital_blip", -17),
-      (11.8, "low_rise", -19), (12.5, "distorting_glitch", -23), (19.04, "basscrack", -21),
-      (24.8, "glass_shine", -18), (26.44, "ui_tap_tail", -18), (27.74, "button_1", -18), (28.74, "button_3", -18),
-      (30.9, "ripple_texture", -21), (33.72, "combo", -16), (33.8, "sparkle", -15),
-      (36.5, "gear_click", -18), (37.6, "ui_swipe", -18),
-      (41.4, "click_ticks", -20), (43.7, "digital_blip", -19), (44.3, "ui_pop_1", -19), (45.2, "ui_texture", -20), (48.62, "alienated_warps", -23),
-      (52.3, "riser", -19), (53.1, "impact_boom", -19), (55.9, "sparkle", -16), (56.0, "ui_chime", -18),
-      (61.5, "cyber_shift", -22), (64.3, "glass_shine", -18), (66.72, "ui_chime", -19),
-      (73.40, "ui_click", -15), (73.70, "ui_notify", -16)]
+ev = [(2.82, "glass_shine", -18), (11.42, "low_rise", -20), (13.6, "digital_glitch", -24), (19.04, "basscrack", -22),
+      (24.24, "sparkle", -17), (33.72, "combo", -16), (39.82, "click_ticks", -21), (44.3, "ui_texture", -21),
+      (48.62, "alienated_warps", -24), (50.32, "riser", -20), (55.98, "ui_chime", -18), (60.62, "ripple_texture", -21),
+      (66.72, "ui_pop_1", -19), (69.2, "ui_notify", -18), (73.40, "ui_click", -15), (73.70, "button_3", -17)]
 for tt, s, g in ev: c.append({"t": tt, "sfx": s, "gain_db": g})
 for x in c: x["gain_db"] -= 3
 c.sort(key=lambda x: x["t"])
@@ -44,9 +39,9 @@ ffmpeg -i final.mp4 -af ebur128 -f null - 2>&1 | grep -E "^\s+I:" | tail -1
 ffmpeg -v error -y -i final.mp4 -vf "fps=0.5,scale=150:-1,tile=13x3" -frames:v 1 gfinal.png
 R=/home/user/Yordamchi-AI
 mkdir -p $R/edits/kids_vs_adults_qa $R/output
-cp final.mp4 $R/output/logoped_bolalar_yonalish_reel_9x16.mp4
-cp v15_kids.py story.py cues.json build.sh full.sh $R/edits/kids_vs_adults_qa/
-cd $R && git add edits && git commit -qm "Logoped long reel (3 parts joined): sample motion backgrounds, glass icon scenes, 4 caption typefaces, varied SFX, background music
+cp final.mp4 $R/output/logoped_bolalar_yonalish_broll_9x16.mp4
+cp v15_kids.py v16_broll.py mk_broll.py story.py cues.json build.sh full.sh $R/edits/kids_vs_adults_qa/
+cd $R && git add edits && git commit -qm "Logoped long reel v2: B-roll first, expert full / round / rounded card / voice-only, no 50-50 panels
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01UonvvDdpC4BVYpgLmBEMkX" && git push -q origin claude/brave-euler-2p9lcf 2>&1 | tail -1
