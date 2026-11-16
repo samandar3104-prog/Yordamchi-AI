@@ -1,0 +1,260 @@
+[
+ {
+  "t": 0.02,
+  "sfx": "cine_strike",
+  "gain_db": -19
+ },
+ {
+  "t": 0.62,
+  "sfx": "glass_shine",
+  "gain_db": -19
+ },
+ {
+  "t": 2.22,
+  "sfx": "ui_pop_2",
+  "gain_db": -19
+ },
+ {
+  "t": 3.72,
+  "sfx": "deep_whoosh",
+  "align": "hit",
+  "gain_db": -16
+ },
+ {
+  "t": 7.9,
+  "sfx": "typing",
+  "gain_db": -22
+ },
+ {
+  "t": 8.42,
+  "sfx": "combo",
+  "gain_db": -17
+ },
+ {
+  "t": 8.5,
+  "sfx": "sparkle",
+  "gain_db": -17
+ },
+ {
+  "t": 10.219999999999999,
+  "sfx": "ui_swipe",
+  "align": "hit",
+  "gain_db": -16
+ },
+ {
+  "t": 11.12,
+  "sfx": "button_1",
+  "gain_db": -19
+ },
+ {
+  "t": 11.92,
+  "sfx": "button_3",
+  "gain_db": -19
+ },
+ {
+  "t": 12.62,
+  "sfx": "button_1",
+  "gain_db": -19
+ },
+ {
+  "t": 13.22,
+  "sfx": "basscrack",
+  "gain_db": -22
+ },
+ {
+  "t": 14.52,
+  "sfx": "static_whoosh",
+  "align": "hit",
+  "gain_db": -16
+ },
+ {
+  "t": 16.12,
+  "sfx": "ui_tap_tail",
+  "gain_db": -19
+ },
+ {
+  "t": 17.22,
+  "sfx": "ui_tap_tail",
+  "gain_db": -19
+ },
+ {
+  "t": 17.9,
+  "sfx": "ui_chime",
+  "gain_db": -21
+ },
+ {
+  "t": 18.52,
+  "sfx": "ui_tap_tail",
+  "gain_db": -19
+ },
+ {
+  "t": 20.22,
+  "sfx": "inertia_ramp",
+  "align": "start",
+  "gain_db": -16
+ },
+ {
+  "t": 22.32,
+  "sfx": "ui_pop_1",
+  "gain_db": -19
+ },
+ {
+  "t": 24.12,
+  "sfx": "button_2",
+  "gain_db": -19
+ },
+ {
+  "t": 24.12,
+  "sfx": "ripple_texture",
+  "gain_db": -21
+ },
+ {
+  "t": 26.52,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -16
+ },
+ {
+  "t": 27.42,
+  "sfx": "low_rise",
+  "gain_db": -20
+ },
+ {
+  "t": 31.92,
+  "sfx": "glass_shine",
+  "gain_db": -19
+ },
+ {
+  "t": 32.92,
+  "sfx": "ui_pop_2",
+  "gain_db": -20
+ },
+ {
+  "t": 35.52,
+  "sfx": "deep_whoosh",
+  "align": "hit",
+  "gain_db": -16
+ },
+ {
+  "t": 38.0,
+  "sfx": "click_ticks",
+  "gain_db": -22
+ },
+ {
+  "t": 38.32,
+  "sfx": "ui_pop_1",
+  "gain_db": -19
+ },
+ {
+  "t": 40.42,
+  "sfx": "ui_pop_1",
+  "gain_db": -19
+ },
+ {
+  "t": 43.6,
+  "sfx": "typing",
+  "gain_db": -22
+ },
+ {
+  "t": 43.62,
+  "sfx": "impact_boom",
+  "gain_db": -21
+ },
+ {
+  "t": 44.82,
+  "sfx": "riser",
+  "gain_db": -21
+ },
+ {
+  "t": 49.62,
+  "sfx": "riser",
+  "gain_db": -20
+ },
+ {
+  "t": 52.720000000000006,
+  "sfx": "ui_pop_2",
+  "gain_db": -19
+ },
+ {
+  "t": 66.32,
+  "sfx": "ui_swipe",
+  "align": "hit",
+  "gain_db": -16
+ },
+ {
+  "t": 66.32,
+  "sfx": "deep_whoosh",
+  "gain_db": -16
+ },
+ {
+  "t": 67.72,
+  "sfx": "button_2",
+  "gain_db": -19
+ },
+ {
+  "t": 69.72,
+  "sfx": "glass_shine",
+  "gain_db": -19
+ },
+ {
+  "t": 72.92,
+  "sfx": "click_ticks",
+  "gain_db": -22
+ },
+ {
+  "t": 74.92,
+  "sfx": "sparkle",
+  "gain_db": -17
+ },
+ {
+  "t": 75.0,
+  "sfx": "ui_chime",
+  "gain_db": -20
+ },
+ {
+  "t": 78.11999999999999,
+  "sfx": "static_whoosh",
+  "align": "hit",
+  "gain_db": -16
+ },
+ {
+  "t": 78.42,
+  "sfx": "ui_notify",
+  "gain_db": -18
+ },
+ {
+  "t": 87.11999999999999,
+  "sfx": "ui_pop_1",
+  "gain_db": -19
+ },
+ {
+  "t": 88.42,
+  "sfx": "ui_pop_2",
+  "gain_db": -19
+ },
+ {
+  "t": 91.22,
+  "sfx": "sparkle",
+  "gain_db": -19
+ },
+ {
+  "t": 94.82,
+  "sfx": "combo",
+  "gain_db": -18
+ },
+ {
+  "t": 96.02,
+  "sfx": "riser",
+  "gain_db": -20
+ },
+ {
+  "t": 101.22,
+  "sfx": "ui_pop_2",
+  "gain_db": -19
+ },
+ {
+  "t": 109.92,
+  "sfx": "button_2",
+  "gain_db": -19
+ }
+]

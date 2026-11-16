@@ -1,0 +1,45 @@
+# Muslima Usman — what made me who I am (5 parts joined). Cartoon everywhere, expert only in the middle and at the end.
+SEG = [
+    (0.00, 49.60, "full", "cartoon", 1.00),
+    (49.60, 66.30, "full", "expert", 1.00),
+    (66.30, 96.00, "full", "cartoon", 1.00),
+    (96.00, 999.0, "full", "expert", 1.00),
+]
+TAP_T = 999
+SCENES = [(0.00, 3.70, "hook"), (3.70, 10.20, "duty"), (10.20, 14.50, "eldest"), (14.50, 20.20, "bills"),
+          (20.20, 26.50, "chores"), (26.50, 35.50, "travel"), (35.50, 49.60, "climb"),
+          (66.30, 78.10, "society"), (78.10, 96.00, "brand")]
+
+CAPTIONS = [
+    ([("Hozirgi Muslima Usman", "thin", 0.05), ("bo'lishimga", "thin", 1.50), ("nima sabab bo'lgan?", "bold", 2.20)], 3.60),
+    ([("Eng birinchi o'rinda", "thin", 6.00), ("MAS'ULIYATLILIGIM", "caps", 7.90)], 10.10),
+    ([("Birinchi farzand bo'lganim uchun", "thin", 10.30), ("oilaviy ko'p narsalar", "thin", 11.80), ("mening bo'ynimga tushgan", "serif", 13.10)], 14.45),
+    ([("16 yoshimda", "bold", 14.60), ("svetni, suvni to'lardim,", "thin", 16.20), ("gaz to'lovlarini", "thin", 18.60)], 20.15),
+    ([("kommunal to'lovlardan tortib,", "thin", 20.30), ("ukamning darsini qildirish,", "thin", 22.30), ("uyni tozalash", "bold", 24.10)], 24.95),
+    ([("Hamma narsa", "thin", 25.00), ("mening bo'ynimda bo'lgan", "serif", 25.70)], 26.55),
+    ([("Chunki ota-onamiz", "thin", 26.60), ("ko'p safarda yurishardi", "bold", 29.10)], 31.80),
+    ([("Buvim bilan, ukam bilan", "thin", 31.90), ("qolgan davrlarimiz bo'lgan", "serif", 34.30)], 35.60),
+    ([("Mas'uliyatli bo'lish:", "thin", 35.70), ("hayotda ko'p narsaga", "thin", 37.30), ("erishishim kerak", "bold", 38.30)], 39.00),
+    ([("Men katta farzandman,", "thin", 39.10), ("ukam, jiyanlarim uchun", "thin", 40.40), ("o'rnak bo'lishim kerak", "bold", 41.60)], 42.50),
+    ([("Ichimdagi", "thin", 42.60), ("MOTIVATSIYA", "caps", 43.60)], 44.90),
+    ([("Shu narsa menga", "thin", 45.00), ("turtki bo'lardi", "serif", 46.00), ("men ko'rsatishim kerak edi", "thin", 46.90)], 49.50),
+    ([("Va shu harakat meni", "thin", 51.00), ("hozirgi muvaffaqiyatga", "bold", 52.70)], 54.30),
+    ([("ko'p narsaga erishishim kerakligi", "thin", 54.40)], 57.50),
+    ([("Tabiiyki, vaqt o'tib", "thin", 58.00), ("bu motivatsiya", "bold", 59.60)], 62.00),
+    ([("men harakat qilganman", "thin", 65.50)], 66.30),
+    ([("Keyinchalik oldimga", "thin", 66.50), ("yaxshiroq maqsadlar", "bold", 67.70), ("qo'ya boshladim", "thin", 68.50)], 69.60),
+    ([("Jamiyatga yordam berish,", "thin", 69.70), ("bolalarga, insonlarga", "serif", 71.20)], 72.80),
+    ([("o'zimdan iz qoldirish", "bold", 72.90)], 74.80),
+    ([("Ana shu narsa", "thin", 74.90), ("o'sishimga sabab bo'ldi", "serif", 76.20)], 78.10),
+    ([("Agar siz Muslima Usman", "thin", 78.30), ("brendi haqida so'rasangiz,", "thin", 79.40)], 80.90),
+    ([("Hozirgi Muslima Usman bo'lib", "thin", 85.70), ("yetishishimda", "bold", 87.10)], 88.30),
+    ([("shogirdlarim", "serif", 89.80)], 92.60),
+    ([("shu insonlar bo'lgan", "bold", 94.80)], 95.90),
+    ([("Va shu ko'p-ko'p faktorlar", "thin", 96.10), ("meni sayqallab kelyapti", "serif", 98.80)], 99.90),
+    ([("Bu hali men uchun", "thin", 100.00), ("oxirgi nuqta emas", "bold", 101.20)], 102.10),
+    ([("Hali ko'p yo'l", "thin", 102.20), ("bosib o'tishim kerak", "bold", 104.20)], 105.20),
+    ([("Eng muhim narsa —", "thin", 106.60), ("oldingizga qo'ygan", "thin", 108.20), ("maqsadlaringiz", "bold", 109.90)], 111.20),
+    ([("va niyatingiz", "thin", 111.30), ("to'g'ri bo'lishi ekan", "serif", 111.80)], 112.60),
+    ([("Yomon narsalarni to'g'rilab,", "thin", 115.40), ("yaxshi niyat bilan", "bold", 117.50)], 119.40),
+    ([("muvaffaqiyatimga", "serif", 119.90), ("sabab bo'lgan", "thin", 120.60)], 999),
+]
