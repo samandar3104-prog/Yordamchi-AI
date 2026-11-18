@@ -13,6 +13,7 @@ jobs:
       - name: Download public-domain images from Wikimedia Commons
         run: |
           set +e
+          pip install -q pillow
           mkdir -p img
           while read -r key url; do
             case "$key" in ""|"#"*) continue;; esac
@@ -22,7 +23,7 @@ jobs:
               [ "${code%%|*}" = "200" ] && break
               echo "retry $key $code" | tee -a fetch.log; sleep 20
             done
-            if [ "${code%%|*}" = "200" ]; then convert tmp.bin[0] -resize '2400x2400>' -quality 90 "img/$key.jpg" && echo "ok $key" | tee -a fetch.log; else echo "FAIL $key" | tee -a fetch.log; fi
+            if [ "${code%%|*}" = "200" ]; then python3 -c "import sys;from PIL import Image;Image.MAX_IMAGE_PIXELS=None;im=Image.open('tmp.bin');im.seek(0);im=im.convert('RGB');im.thumbnail((2400,2400));im.save(sys.argv[1],quality=90)" "img/$key.jpg" && echo "ok $key" | tee -a fetch.log || echo "CONVFAIL $key" | tee -a fetch.log; else echo "FAIL $key" | tee -a fetch.log; fi
             sleep 2
           done < urls.txt
           rm -f tmp.bin
