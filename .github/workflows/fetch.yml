@@ -12,9 +12,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Download public-domain images from Wikimedia Commons
         run: |
+          set +e
           mkdir -p img
           while read -r key url; do
-            [ -z "$key" ] && continue
+            case "$key" in ""|"#"*) continue;; esac
             [ -f "img/$key.jpg" ] && continue
             for i in 1 2 3 4 5; do
               code=$(curl -sS -L -o tmp.bin -w '%{http_code}|%header{retry-after}' -A 'PUWHistoryVideoAssets/1.0 (https://github.com/samandar3104-prog/Yordamchi-AI) curl/8' "$url")
@@ -26,6 +27,7 @@ jobs:
           done < urls.txt
           rm -f tmp.bin
       - name: Commit
+        if: always()
         run: |
           git config user.name "asset-bot"
           git config user.email "asset-bot@users.noreply.github.com"
