@@ -34,4 +34,4 @@ jobs:
           git config user.email "asset-bot@users.noreply.github.com"
           touch fetch.log; git add -A .
           git commit -m "Add archival images" || true
-          git push
+          git pull --rebase; git push
