@@ -26,3 +26,4 @@ Har bir yangi montajda shu qoidalarga amal qilinadi.
 - B-roll kadrlarda ekspert: dumaloq kadr / kartochka yoki faqat ovoz. 50/50 va ortiqcha animatsiya qilinmaydi.
 - Har bir klipning muallifi `credits.txt` ga yoziladi (Pexels talabi).
 - Yozuvli, logotipli yoki reklama ekranli kadrlar ishlatilmaydi.
+- Pinterest: mijoz B-roll uchun Pinterest'dan ham foydalanishni so'ragan. Pinterest qidiruvi login/JS siz ishlamaydi, shuning uchun mijoz pin havolasini yuborsa, o'sha pindagi video/rasmni olaman. Pinterest kadrlari boshqalarning mualliflik ishi — iloji bo'lsa avval Pexels (bepul, ruxsatli) ishlatiladi.
