@@ -20,3 +20,9 @@ Har bir yangi montajda shu qoidalarga amal qilinadi.
 - Ranglar: to'q jigarrang, qizg'ish-jigarrang, sariq/oltin.
 - Qo'shimcha kadrlar xira (blur) bo'lmasin.
 - Fon musiqasi past (nutqdan ~15 dB past), SFX past.
+
+## B-roll (o'zim topaman)
+- Ekspert B-roll yubormasa ham, mavzuga mos B-roll'ni o'zim topaman: vidIQ `find_broll` (Pexels, bepul, tik 9:16) orqali qidiraman, `tools/broll_fetch.py` bilan yuklab, 1080x1920 qilib tayyorlayman.
+- B-roll kadrlarda ekspert: dumaloq kadr / kartochka yoki faqat ovoz. 50/50 va ortiqcha animatsiya qilinmaydi.
+- Har bir klipning muallifi `credits.txt` ga yoziladi (Pexels talabi).
+- Yozuvli, logotipli yoki reklama ekranli kadrlar ishlatilmaydi.
