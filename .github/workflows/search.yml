@@ -1,0 +1,42 @@
+name: search-ww2-assets
+on:
+  push:
+    branches: [ww2-assets]
+    paths: [queries.txt]
+permissions:
+  contents: write
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Search Wikimedia Commons
+        run: |
+          python3 - <<'PY'
+          import json,urllib.request,urllib.parse,time
+          UA={'User-Agent':'PUWHistoryVideoAssets/1.0 (https://github.com/samandar3104-prog/Yordamchi-AI)'}
+          def api(p):
+            u='https://commons.wikimedia.org/w/api.php?'+urllib.parse.urlencode(p)
+            for i in range(5):
+              try:
+                return json.load(urllib.request.urlopen(urllib.request.Request(u,headers=UA),timeout=30))
+              except Exception as e: time.sleep(10)
+            return {}
+          out={}
+          for line in open('queries.txt'):
+            line=line.strip()
+            if not line or line.startswith('#'):continue
+            key,q=line.split('\t',1)
+            r=api({'action':'query','format':'json','generator':'search','gsrnamespace':6,'gsrsearch':q,'gsrlimit':6,'prop':'imageinfo','iiprop':'url|size|extmetadata','iiextmetadatafilter':'LicenseShortName|Artist|Credit'})
+            res=[]
+            for p in sorted((r.get('query',{}).get('pages',{}) or {}).values(),key=lambda x:x.get('index',99)):
+              ii=(p.get('imageinfo') or [{}])[0];em=ii.get('extmetadata',{})
+              res.append({'title':p['title'],'url':ii.get('url'),'w':ii.get('width'),'h':ii.get('height'),'lic':em.get('LicenseShortName',{}).get('value'),'credit':(em.get('Credit',{}).get('value') or '')[:120]})
+            out[key]=res;time.sleep(1)
+          json.dump(out,open('cands.json','w'),indent=1)
+          PY
+      - name: Commit
+        run: |
+          git config user.name "asset-bot"
+          git config user.email "asset-bot@users.noreply.github.com"
+          git add cands.json; git commit -m "Search results" || true; git push

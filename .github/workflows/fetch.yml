@@ -1,7 +1,7 @@
-name: fetch-ww1-assets
+name: fetch-ww2-assets
 on:
   push:
-    branches: [ww1-assets]
+    branches: [ww2-assets]
     paths: [urls.txt]
 permissions:
   contents: write
