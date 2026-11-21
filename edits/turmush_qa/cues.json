@@ -1,95 +1,105 @@
 [
  {
-  "t": 0.02,
-  "sfx": "cine_strike",
-  "gain_db": -20
+  "t": 0.1,
+  "sfx": "ui_pop_2",
+  "gain_db": -19
+ },
+ {
+  "t": 2.57,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -19
  },
  {
   "t": 5.619999999999999,
-  "sfx": "soft_swoosh",
-  "align": "start",
-  "gain_db": -17
- },
- {
-  "t": 6.62,
-  "sfx": "ui_pop_2",
-  "gain_db": -20
- },
- {
-  "t": 11.32,
   "sfx": "ui_swipe",
   "align": "hit",
-  "gain_db": -17
+  "gain_db": -19
  },
  {
-  "t": 12.42,
-  "sfx": "glass_shine",
-  "gain_db": -20
- },
- {
-  "t": 17.97,
+  "t": 7.819999999999999,
   "sfx": "deep_whoosh",
   "align": "hit",
-  "gain_db": -17
+  "gain_db": -19
  },
  {
-  "t": 21.32,
-  "sfx": "basscrack",
-  "gain_db": -23
- },
- {
-  "t": 24.12,
+  "t": 8.98,
   "sfx": "inertia_ramp",
   "align": "start",
-  "gain_db": -17
+  "gain_db": -19
  },
  {
-  "t": 24.82,
-  "sfx": "ui_pop_1",
-  "gain_db": -20
- },
- {
-  "t": 27.12,
+  "t": 10.94,
   "sfx": "soft_swoosh",
   "align": "start",
-  "gain_db": -17
+  "gain_db": -19
  },
  {
-  "t": 28.62,
+  "t": 12.02,
+  "sfx": "ui_swipe",
+  "align": "hit",
+  "gain_db": -19
+ },
+ {
+  "t": 13.62,
+  "sfx": "deep_whoosh",
+  "align": "hit",
+  "gain_db": -19
+ },
+ {
+  "t": 19.62,
+  "sfx": "inertia_ramp",
+  "align": "start",
+  "gain_db": -19
+ },
+ {
+  "t": 22.18,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -19
+ },
+ {
+  "t": 26.84,
+  "sfx": "ui_swipe",
+  "align": "hit",
+  "gain_db": -19
+ },
+ {
+  "t": 28.52,
   "sfx": "sparkle",
-  "gain_db": -20
- },
- {
-  "t": 35.620000000000005,
-  "sfx": "ui_swipe",
-  "align": "hit",
-  "gain_db": -17
- },
- {
-  "t": 35.72,
-  "sfx": "typing",
-  "gain_db": -23
- },
- {
-  "t": 37.220000000000006,
-  "sfx": "deep_whoosh",
-  "align": "hit",
-  "gain_db": -17
- },
- {
-  "t": 44.120000000000005,
-  "sfx": "inertia_ramp",
-  "align": "start",
-  "gain_db": -17
- },
- {
-  "t": 44.72,
-  "sfx": "ui_chime",
   "gain_db": -21
  },
  {
-  "t": 49.32,
-  "sfx": "typing",
-  "gain_db": -23
+  "t": 29.34,
+  "sfx": "deep_whoosh",
+  "align": "hit",
+  "gain_db": -19
+ },
+ {
+  "t": 31.78,
+  "sfx": "inertia_ramp",
+  "align": "start",
+  "gain_db": -19
+ },
+ {
+  "t": 33.52,
+  "sfx": "soft_swoosh",
+  "align": "start",
+  "gain_db": -19
+ },
+ {
+  "t": 35.46,
+  "sfx": "ui_pop_1",
+  "gain_db": -21
+ },
+ {
+  "t": 46.220000000000006,
+  "sfx": "ui_pop_2",
+  "gain_db": -19
+ },
+ {
+  "t": 47.52,
+  "sfx": "ui_pop_1",
+  "gain_db": -18
  }
 ]
