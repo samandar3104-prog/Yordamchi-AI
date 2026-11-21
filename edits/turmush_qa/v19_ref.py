@@ -50,7 +50,7 @@ def draw_captions(c, t):
         if not (lines[0][2] - 0.05 <= t < t_out + 0.18): continue
         out = clamp((t - t_out) / 0.18)
         rows = layout_group(gi)
-        y = CAP_Y - (len(rows) - 1) * LINE_H / 2
+        y = (1470 if lines[0][2] < R.HOOK[3] else CAP_Y) - (len(rows) - 1) * LINE_H / 2
         for row in rows:
             widths = [mf(w, s).getlength(wd) for wd, w, s, _ in row]
             sp = 13
@@ -109,23 +109,27 @@ def hook_box():
 # ---- follow pill (avatar from her own frame) ----
 @lru_cache(maxsize=1)
 def avatar():
-    p = subprocess.run(["ffmpeg", "-v", "error", "-ss", "45.0", "-i", SRC, "-frames:v", "1", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True)
-    im = Image.frombytes("RGB", (SW, SH), p.stdout)
-    r = 78; a = im.crop((int(FACE_X - r), int(FACE_Y + 30 - r), int(FACE_X + r), int(FACE_Y + 30 + r))).resize((120, 120), Image.LANCZOS).convert("RGBA")
+    im = Image.open(os.path.join(HERE, "profile_shot.png")).convert("RGB").crop((196, 146, 464, 414)).resize((120, 120), Image.LANCZOS).convert("RGBA")
     m = Image.new("L", (480, 480), 0); ImageDraw.Draw(m).ellipse((0, 0, 479, 479), fill=255)
-    a.putalpha(m.resize((120, 120), Image.LANCZOS))
+    im.putalpha(m.resize((120, 120), Image.LANCZOS))
     out = Image.new("RGBA", (136, 136), (0, 0, 0, 0)); ImageDraw.Draw(out).ellipse((0, 0, 135, 135), fill=(255, 255, 255, 255))
-    out.alpha_composite(a, (8, 8)); return out
+    out.alpha_composite(im, (8, 8)); return out
+
+def badge(d, x, y, r=15):
+    pts = [(x + (r if k % 2 == 0 else r * 0.8) * math.cos(math.pi * k / 8), y + (r if k % 2 == 0 else r * 0.8) * math.sin(math.pi * k / 8)) for k in range(16)]
+    d.polygon(pts, fill=(0, 149, 246))
+    d.line([(x - 6, y), (x - 1.5, y + 5), (x + 7, y - 5)], fill="white", width=4)
 
 def pill(on):
-    w_, h_ = 600, 136
+    w_, h_ = 690, 136
     im = Image.new("RGBA", (w_ + 40, h_ + 40), (0, 0, 0, 0))
     sh = Image.new("RGBA", im.size, (0, 0, 0, 0)); ImageDraw.Draw(sh).rounded_rectangle((20, 28, 20 + w_, 28 + h_), h_ // 2, fill=(0, 0, 0, 120))
     im.alpha_composite(sh.filter(ImageFilter.GaussianBlur(12)))
     d = ImageDraw.Draw(im)
     d.rounded_rectangle((20, 20, 20 + w_, 20 + h_), h_ // 2, fill=(255, 255, 255, 250))
-    d.text((180, 56), "Muslima Usman", font=mf("Bold", 36), fill=(18, 18, 22), anchor="lm")
-    d.text((180, 92), "@logoped_muslimausman", font=mf("Medium", 22), fill=(110, 110, 118), anchor="lm")
+    f_ = mf("Bold", 32); d.text((180, 56), "logoped_muslimausman", font=f_, fill=(18, 18, 22), anchor="lm")
+    badge(d, 180 + f_.getlength("logoped_muslimausman") + 24, 57)
+    d.text((180, 93), "DEFEKTOLOG | LOGOPED | ABA - TERAPIST", font=mf("Medium", 19), fill=(110, 110, 118), anchor="lm")
     # toggle
     tx, ty = 180, 122
     d.rounded_rectangle((tx, ty, tx + 64, ty + 26), 13, fill=(0, 149, 246) if on > 0.5 else (205, 205, 210))
@@ -147,7 +151,7 @@ def render(i, src):
     h0, h1 = R.HOOK[2], R.HOOK[3]
     if h0 <= t < h1 + 0.25:
         hb = hook_box(); k = spring(t - h0, w=12, z=0.6); out = clamp((t - h1) / 0.25)
-        paste_alpha(c, hb, W / 2 - hb.width * k / 2, 1380 - hb.height * k / 2, clamp(k * 2) * (1 - out), max(0.01, k))
+        paste_alpha(c, hb, W / 2 - hb.width * k / 2, 1270 - hb.height * k / 2, clamp(k * 2) * (1 - out), max(0.01, k))
     draw_captions(c, t)
     u = t - R.FOLLOW_T
     if u > 0:

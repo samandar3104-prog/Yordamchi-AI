@@ -1,13 +1,12 @@
 # v5 — styled after the reference reel: B-roll hook + green title box, expert jump-cut zooms,
 # small word-by-word captions on the chest, B-roll inserts, follow pill at the end.
 # Captions = her own words only. *word* = bold emphasis. kinds: n (normal), cap (ExtraBold caps), it (ExtraBold italic caps)
-HOOK = ("TURMUSHGA CHIQMAYAPMAN,", "YOSHIM O'TIB KETDI", 0.10, 2.50)
+HOOK = ("TURMUSHGA CHIQMAYAPMAN,", "YOSHIM O'TIB KETDI", 0.10, 3.50)
 BROLL = [  # (t0, t1, clip, clip_start, crop)
-    (0.00, 2.55, "frustrated", 0.5, None),
-    (5.60, 7.80, "henna", 0.0, None),
+    (0.00, 3.55, "frustrated", 0.5, None),
+    (5.60, 7.80, "broll3/bride", 1.0, None),
     (8.96, 10.92, "rings", 9.2, "rings"),
-    (12.00, 13.60, "dua", 0.5, None),
-    (19.60, 22.16, "think", 1.0, None),
+    (12.00, 13.60, "broll3/quran", 1.0, None),
     (26.82, 29.32, "smile", 0.0, None),
     (31.76, 33.50, "study", 0.5, None),
 ]

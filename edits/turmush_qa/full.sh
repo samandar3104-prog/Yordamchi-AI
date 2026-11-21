@@ -35,9 +35,9 @@ ffprobe -v error -show_entries format=duration -of csv=p=0 final.mp4
 ffmpeg -v error -y -i final.mp4 -vf "fps=0.5,scale=150:-1,tile=13x2" -frames:v 1 gfinal.png
 R=/home/user/Yordamchi-AI
 mkdir -p $R/edits/turmush_qa $R/output
-cp final.mp4 $R/output/turmushga_chiqish_v5_9x16.mp4
-cp story_ref.py mk_broll_ref.py v18_text.py v19_ref.py cues.json build.sh full.sh $R/edits/turmush_qa/ && cp broll2/credits.txt $R/edits/turmush_qa/credits.txt && echo 'Music: "Touching Moments Two - Higher" Kevin MacLeod (incompetech.com), CC BY 4.0' >/dev/null; echo 'Music v3: "Inspired" Kevin MacLeod (incompetech.com), CC BY 4.0' >> $R/edits/turmush_qa/credits.txt
-cd $R && git add edits && git commit -qm "Turmushga chiqish reel v5: styled after the reference reel (hook box, word-by-word captions, jump-cut zooms, B-roll, follow pill)
+cp final.mp4 $R/output/turmushga_chiqish_v6_9x16.mp4
+cp story_ref.py mk_broll_ref.py v18_text.py v19_ref.py cues.json build.sh full.sh $R/edits/turmush_qa/ && cat broll2/credits.txt broll3/credits.txt > $R/edits/turmush_qa/credits.txt && echo 'Music: "Touching Moments Two - Higher" Kevin MacLeod (incompetech.com), CC BY 4.0' >/dev/null; echo 'Music v3: "Inspired" Kevin MacLeod (incompetech.com), CC BY 4.0' >> $R/edits/turmush_qa/credits.txt
+cd $R && git add edits && git commit -qm "Turmushga chiqish reel v6: new bride/Quran B-roll, longer hook, follow pill from her real profile
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01UonvvDdpC4BVYpgLmBEMkX" && git push -q origin claude/brave-euler-2p9lcf 2>&1 | tail -1

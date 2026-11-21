@@ -5,7 +5,7 @@
   "gain_db": -19
  },
  {
-  "t": 2.57,
+  "t": 3.57,
   "sfx": "soft_swoosh",
   "align": "start",
   "gain_db": -19
@@ -47,21 +47,9 @@
   "gain_db": -19
  },
  {
-  "t": 19.62,
+  "t": 26.84,
   "sfx": "inertia_ramp",
   "align": "start",
-  "gain_db": -19
- },
- {
-  "t": 22.18,
-  "sfx": "soft_swoosh",
-  "align": "start",
-  "gain_db": -19
- },
- {
-  "t": 26.84,
-  "sfx": "ui_swipe",
-  "align": "hit",
   "gain_db": -19
  },
  {
@@ -71,20 +59,20 @@
  },
  {
   "t": 29.34,
-  "sfx": "deep_whoosh",
-  "align": "hit",
+  "sfx": "soft_swoosh",
+  "align": "start",
   "gain_db": -19
  },
  {
   "t": 31.78,
-  "sfx": "inertia_ramp",
-  "align": "start",
+  "sfx": "ui_swipe",
+  "align": "hit",
   "gain_db": -19
  },
  {
   "t": 33.52,
-  "sfx": "soft_swoosh",
-  "align": "start",
+  "sfx": "deep_whoosh",
+  "align": "hit",
   "gain_db": -19
  },
  {
