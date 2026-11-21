@@ -32,9 +32,9 @@ ffprobe -v error -show_entries format=duration -of csv=p=0 final.mp4
 ffmpeg -v error -y -i final.mp4 -vf "fps=0.5,scale=150:-1,tile=13x2" -frames:v 1 gfinal.png
 R=/home/user/Yordamchi-AI
 mkdir -p $R/edits/turmush_qa $R/output
-cp final.mp4 $R/output/turmushga_chiqish_v3_9x16.mp4
+cp final.mp4 $R/output/turmushga_chiqish_v4_9x16.mp4
 cp story.py story_broll.py mk_broll.py v18_text.py cues.json build.sh full.sh $R/edits/turmush_qa/ && cp broll2/credits.txt $R/edits/turmush_qa/credits.txt && echo 'Music: "Touching Moments Two - Higher" Kevin MacLeod (incompetech.com), CC BY 4.0' >/dev/null; echo 'Music v3: "Inspired" Kevin MacLeod (incompetech.com), CC BY 4.0' >> $R/edits/turmush_qa/credits.txt
-cd $R && git add edits && git commit -qm "Turmushga chiqish reel v3: expert full screen only (no round frames), new music; B-roll slots kept in story_broll.py
+cd $R && git add edits && git commit -qm "Turmushga chiqish reel v4: captions are her exact words (Whisper large-v3)
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01UonvvDdpC4BVYpgLmBEMkX" && git push -q origin claude/brave-euler-2p9lcf 2>&1 | tail -1
