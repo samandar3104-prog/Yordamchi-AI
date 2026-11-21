@@ -1,14 +1,14 @@
 # "Turmushga chiqish" — B-roll first; expert full / round frame / rounded card / voice-only
-SEG = [
+SEG = [   # expert only, full screen; zoom changes between sentences (B-roll slots kept in story_broll.py)
     (0.00, 5.60, "full", "full", 1.00),
-    (5.60, 11.30, "full", "circle", 1.00),
-    (11.30, 17.95, "full", "circle", 1.00),
-    (17.95, 24.10, "full", "vo", 1.00),
-    (24.10, 27.10, "full", "full", 1.04),
-    (27.10, 35.60, "full", "card", 1.00),
-    (35.60, 37.20, "full", "full", 1.05),
-    (37.20, 44.10, "full", "circle", 1.00),
-    (44.10, 999.0, "full", "full", 1.02),
+    (5.60, 11.30, "full", "full", 1.08),
+    (11.30, 17.95, "full", "full", 1.00),
+    (17.95, 24.10, "full", "full", 1.08),
+    (24.10, 27.10, "full", "full", 1.00),
+    (27.10, 35.60, "full", "full", 1.07),
+    (35.60, 37.20, "full", "full", 1.00),
+    (37.20, 44.10, "full", "full", 1.07),
+    (44.10, 999.0, "full", "full", 1.00),
 ]
 TAP_T = 999
 CAPTIONS = [
